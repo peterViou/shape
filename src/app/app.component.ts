@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MasonryOptions, AngularMasonry} from "angular2-masonry";
+import {MasonryOptions} from "angular2-masonry";
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,12 @@ import {MasonryOptions, AngularMasonry} from "angular2-masonry";
 })
 
 export class AppComponent implements OnInit {
+  private cacheInitLength = 10;
   private cacheMoreLength = 10;
   public myOptions: MasonryOptions = {
-    transitionDuration: '0',
-    resize: true
+    transitionDuration: '0.8s',
+    resize: true,
+    hiddenStyle: { opacity: 0 }
   };
 
   @ViewChild('myMasonry') private monMacon;
@@ -20,20 +22,19 @@ export class AppComponent implements OnInit {
 
   constructor() {
   }
-  
+
   ngOnInit() {
-    for (var i = 1; i <= this.cacheMoreLength; i++) {
+    for (var i = 1; i <= this.cacheInitLength; i++) {
       var width = this.randomInt(150, 400);
       var height = this.randomInt(150, 250);
+      // var toto = 'http://via.placeholder.com/' + width + 'x' + height + '/cccccc';
       var toto = 'https://lorempixel.com/' + width + '/' + height + '/fashion';
-      var monArticle = {title: 'Peter', src: toto}
+      var monArticle = {title: i, artist:"Peter", src: toto}
       this.articles.push(monArticle);
     }
-
-
   }
 
-  randomInt(min, max) {
+  private randomInt(min, max) {
     return Math.floor(Math.random() * max + min);
   }
 
