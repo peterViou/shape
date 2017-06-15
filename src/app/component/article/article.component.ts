@@ -24,7 +24,7 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.article.src = this.getItem();
+    // this.article.src = this.getItem();
   }
 
 
