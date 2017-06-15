@@ -1,0 +1,19 @@
+.image{
+  margin: 0 0 6px;
+  width: 400px;
+}
+
+p{
+  margin: 0;
+}
+
+.title {
+  font-style: italic;
+}
+
+.artist {
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 13px;
+  color: #333;
+}
