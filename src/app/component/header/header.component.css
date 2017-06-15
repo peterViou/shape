@@ -29,25 +29,14 @@
 
 #identity #logo {
   display: block;
-  background: url(/assets/logo.png) no-repeat center center;
-  background: none, url(/assets/logo.svg) no-repeat center center;
-  height: 66px;
-  margin: 0 5px 0 0;
+  background: url(/assets/shape-production_logo.png) no-repeat center center;
+  background: none, url(/assets/shape-production_logo.png) no-repeat center center;
+  /*margin: 0 5px 0 0;*/
   padding: 0;
   float: left;
-  width: 176px;
-}
 
-#identity p {
-  display: inline-block;
-  height: 1em;
-  line-height: 1em;
-  margin: 38px 0 0 2px;
-  float: left;
-  color: #000;
-  font-size: 28px;
-  font-family: 'NewBaskervilleFSItalic';
-  font-style: italic;
+  width: 616px;
+  height: 86px;
 }
 
 #border {
