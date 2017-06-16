@@ -4,10 +4,9 @@
   height: 4.8em;
   margin: 0;
   z-index: 100;
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   /*zoom: 1;*/
   /*filter: alpha(opacity=95);*/
-  opacity: 0.8;
   width: 100%;
   /*background-color: antiquewhite;*/
 }
@@ -24,7 +23,7 @@
   background-size: 100% 100%;
   top:1.2em;
   left:2.4em;
-
+  opacity: 1;
   height:2.4em;
   width:300px;
 }
