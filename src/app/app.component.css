@@ -1,6 +1,10 @@
 #main {
-  margin: 6em auto;
+  padding-top: 6em;
+  margin: auto;
   /*background-color: lightblue;*/
+}
+#page-wrap{
+  background-color: #dfdfdf;
 }
 
 .centered {
