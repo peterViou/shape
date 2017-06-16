@@ -1,21 +1,23 @@
-<app-header></app-header>
-<button class="refreshBtn" (click)="refreshed()">Retrace</button>
-<button class="loadMore" (click)="loadMore()">loadMore</button>
-<div
-  id="main"
-  infinite-scroll
-  [infiniteScrollDistance]="2"
-  [infiniteScrollThrottle]="300"
-  (scrolled)="onScroll()"
->
-  <masonry #myMasonry [useImagesLoaded]="true" [options]="myOptions">
-    <masonry-brick class="article" *ngFor="let article of articles ; let i = index">
-      <app-article
-                   [article]="article"
-      ></app-article>
-    </masonry-brick>
-  </masonry>
-  <!--<div [flickity]="{cellAlign: 'left', percentPosition: true, groupCells: true}">-->
-  <!--<div  *ngFor="let child of children">{{child.title}}</div>-->
-  <!--</div>-->
+<div id="page-wrap">
+  <app-header></app-header>
+  <!--<button class="refreshBtn" (click)="refreshed()">Retrace</button>-->
+  <!--<button class="loadMore" (click)="loadMore()">loadMore</button>-->
+  <div
+    id="main"
+    infinite-scroll
+    [infiniteScrollDistance]="3"
+    [infiniteScrollThrottle]="300"
+    (scrolled)="onScroll()"
+  >
+    <masonry class="centered" #myMasonry [useImagesLoaded]="true" [options]="myOptions">
+      <masonry-brick class="article" *ngFor="let article of articles ; let i = index">
+        <app-article
+          [article]="article"
+        ></app-article>
+      </masonry-brick>
+    </masonry>
+    <!--<div [flickity]="{cellAlign: 'left', percentPosition: true, groupCells: true}">-->
+    <!--<div  *ngFor="let child of children">{{child.title}}</div>-->
+    <!--</div>-->
+  </div>
 </div>
