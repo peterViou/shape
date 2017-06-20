@@ -11,9 +11,9 @@
   >
     <masonry class="centered" #myMasonry [useImagesLoaded]="true" [options]="myOptions">
       <masonry-brick class="article" *ngFor="let serie of series ; let i = index">
-        <app-article
-          [article]="serie"
-        ></app-article>
+        <app-serie
+          [serie]="serie"
+        ></app-serie>
       </masonry-brick>
     </masonry>
     <!--<div [flickity]="{cellAlign: 'left', percentPosition: true, groupCells: true}">-->

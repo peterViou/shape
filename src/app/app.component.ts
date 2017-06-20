@@ -18,14 +18,6 @@ export class AppComponent implements OnInit {
         {
           title: '01',
           src: ''
-        },
-        {
-          title: '02',
-          src: ''
-        },
-        {
-          title: '03',
-          src: ''
         }
       ]
     },

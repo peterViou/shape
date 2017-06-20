@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {MasonryModule} from 'angular2-masonry';
 import {AppComponent} from './app.component';
-import {ArticleComponent} from './component/article/article.component';
+import {SerieComponent} from './component/serie/serie.component';
 import {HeaderComponent} from './component/header/header.component';
 import {InfiniteScrollModule} from "angular2-infinite-scroll";
 // import {FlickityModule} from "ngx-flickity";
@@ -11,7 +11,7 @@ import {InfiniteScrollModule} from "angular2-infinite-scroll";
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
+    SerieComponent,
     HeaderComponent,
   ],
   imports: [
