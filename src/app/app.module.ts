@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {SerieComponent} from './component/serie/serie.component';
 import {HeaderComponent} from './component/header/header.component';
 import {InfiniteScrollModule} from "angular2-infinite-scroll";
+import {HttpModule, JsonpModule} from "@angular/http";
 // import {FlickityModule} from "ngx-flickity";
 // import {VirtualScrollModule} from "angular2-virtual-scroll";
 
@@ -13,11 +14,14 @@ import {InfiniteScrollModule} from "angular2-infinite-scroll";
     AppComponent,
     SerieComponent,
     HeaderComponent,
+
   ],
   imports: [
     BrowserModule,
     MasonryModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    HttpModule,
+    JsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

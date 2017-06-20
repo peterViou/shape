@@ -1,0 +1,134 @@
+[
+  {
+    "title": "BMW",
+    "artist": "Tobias",
+    "assets": [
+      {
+        "title": "01",
+        "thumbnail": "https://lorempixel.com/300/300"
+      }
+    ]
+  },
+  {
+    "title": "RENAULT",
+    "artist": "Tobias",
+    "assets": [
+      {
+        "title": "01",
+        "thumbnail": "https://lorempixel.com/300/500"
+      },
+      {
+        "title": "02",
+        "thumbnail": "https://lorempixel.com/300/300"
+      },
+      {
+        "title": "03",
+        "thumbnail": "https://lorempixel.com/300/300"
+      }
+    ]
+  },
+  {
+    "title": "OPEL",
+    "artist": "Tobias",
+    "assets": [
+      {
+        "title": "01",
+        "thumbnail": "https://lorempixel.com/300/500"
+      },
+      {
+        "title": "02",
+        "thumbnail": ""
+      },
+      {
+        "title": "03",
+        "thumbnail": ""
+      }
+    ]
+  }, {
+  "title": "FERARRI",
+  "artist": "Tobias",
+  "assets": [
+    {
+      "title": "01",
+      "thumbnail": "https://lorempixel.com/300/500"
+    },
+    {
+      "title": "02",
+      "thumbnail": ""
+    },
+    {
+      "title": "03",
+      "thumbnail": ""
+    }
+  ]
+}, {
+  "title": "TESLA",
+  "artist": "Tobias",
+  "assets": [
+    {
+      "title": "01",
+      "thumbnail": "https://lorempixel.com/300/200"
+    },
+    {
+      "title": "02",
+      "thumbnail": ""
+    },
+    {
+      "title": "03",
+      "thumbnail": ""
+    }
+  ]
+}, {
+  "title": "MERCEDES",
+  "artist": "Tobias",
+  "assets": [
+    {
+      "title": "01",
+      "thumbnail": "https://lorempixel.com/300/400"
+    },
+    {
+      "title": "02",
+      "thumbnail": ""
+    },
+    {
+      "title": "03",
+      "thumbnail": ""
+    }
+  ]
+}, {
+  "title": "PEUGEOT",
+  "artist": "Tobias",
+  "assets": [
+    {
+      "title": "01",
+      "thumbnail": "https://lorempixel.com/600/500"
+    },
+    {
+      "title": "02",
+      "thumbnail": ""
+    },
+    {
+      "title": "03",
+      "thumbnail": ""
+    }
+  ]
+},
+  {
+    "title": "TOYOTA",
+    "artist": "Laroche",
+    "assets": [
+      {
+        "title": "01",
+        "thumbnail": "https://lorempixel.com/450/500"
+      },
+      {
+        "title": "02",
+        "thumbnail": ""
+      },
+      {
+        "title": "03",
+        "thumbnail": ""
+      }
+    ]
+  }
+]
