@@ -10,9 +10,9 @@
     (scrolled)="onScroll()"
   >
     <masonry class="centered" #myMasonry [useImagesLoaded]="true" [options]="myOptions">
-      <masonry-brick class="article" *ngFor="let article of articles ; let i = index">
+      <masonry-brick class="article" *ngFor="let serie of series ; let i = index">
         <app-article
-          [article]="article"
+          [article]="serie"
         ></app-article>
       </masonry-brick>
     </masonry>
