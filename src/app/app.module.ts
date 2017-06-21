@@ -6,6 +6,7 @@ import {SerieComponent} from './component/serie/serie.component';
 import {HeaderComponent} from './component/header/header.component';
 import {InfiniteScrollModule} from "angular2-infinite-scroll";
 import {HttpModule, JsonpModule} from "@angular/http";
+import {LightboxModule} from 'angular2-lightbox';
 // import {FlickityModule} from "ngx-flickity";
 // import {VirtualScrollModule} from "angular2-virtual-scroll";
 
@@ -21,7 +22,8 @@ import {HttpModule, JsonpModule} from "@angular/http";
     MasonryModule,
     InfiniteScrollModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    LightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

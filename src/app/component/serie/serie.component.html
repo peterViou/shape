@@ -1,5 +1,5 @@
 <a class="article">
-  <img class="image" src={{firstAsset.thumbnail}} alt="A masonry brick">
+  <img class="image" [src]=firstAsset.thumbnail alt="A masonry brick" (click)="openI(i)">
   <div class="title">{{serie.title}}</div>
   <div class="artist">by {{serie.artist}}</div>
 </a>
