@@ -6,21 +6,24 @@ import {IAsset} from "../../iasset";
   templateUrl: './serie.component.html',
   styleUrls: ['./serie.component.css']
 })
-export class SerieComponent   implements OnInit{
+export class SerieComponent implements OnInit {
   @Input() serie;
-  firstAsset:IAsset;
+  firstAsset: IAsset;
+  _isLoaded: boolean ;
+
+  loadedImages: number = 0;
 
   ngOnInit(): void {
-    if (this.serie.assets.length < 2){
-      console.log("La série : " + this.serie.title + " n'a qu'une seule image" )
-    }
+    this._isLoaded = false;
     this.firstAsset = this.serie.assets[0];
-    // throw new Error("Method not implemented.");
   }
 
-  constructor() {
-  }
 
+
+  checkLoaded():void {
+    this._isLoaded = true;
+    // console.log("L'image de la série : " + this.serie.title + " est loadée");
+  };
 
 
 }

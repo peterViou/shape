@@ -12,6 +12,8 @@ import {ISerie} from "./iserie";
 
 export class AppComponent implements OnInit {
   series: ISerie[];
+
+  active:boolean = false;
   errorMessage: string = "this is the error message";
   // public articles = [];
   // public series = [];
@@ -21,11 +23,13 @@ export class AppComponent implements OnInit {
 
   // Instantiation of masonry's component "monMacon" declared in the template into the controller
   @ViewChild('myMasonry') private monMacon;
+  @ViewChild('myModal') private myModal;
   public myOptions: MasonryOptions = {
-    transitionDuration: '2s',
+    transitionDuration: '0s',
     resize: true,
     hiddenStyle: {opacity: 0},
-    fitWidth: true
+    fitWidth: true,
+
   };
 
   constructor(private _seriesService: SeriesService) {
@@ -45,9 +49,20 @@ export class AppComponent implements OnInit {
     this.monMacon.layout();
   }
 
+  peter(items: any){
+    var toto:any;
+    // console.log("Masonry layout is completed : " + items.length)
+    this.monMacon.layout();
+  }
+
   onScroll(): void {
     // for (var i = 1; i <= this.cacheMoreLength; i++) {
     //   this.articles.push(this.createArticle());
     // }
+  }
+
+  zoom():void{
+    console.log("clicliclic");
+    !this.active;
   }
 }

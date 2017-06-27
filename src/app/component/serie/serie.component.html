@@ -1,5 +1,12 @@
-<a class="article">
-  <img class="image" src={{firstAsset.thumbnail}} alt="A masonry brick">
+<a
+  class="article"
+  [class.loaded]="_isLoaded"
+>
+  <img class="image"
+       src={{firstAsset.thumbnail}}
+       (load)="checkLoaded()"
+       [class.loaded]="_isLoaded"
+  >
   <div class="title">{{serie.title}}</div>
   <div class="artist">by {{serie.artist}}</div>
 </a>

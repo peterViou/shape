@@ -6,14 +6,25 @@ import {SerieComponent} from './component/serie/serie.component';
 import {HeaderComponent} from './component/header/header.component';
 import {InfiniteScrollModule} from "angular2-infinite-scroll";
 import {HttpModule, JsonpModule} from "@angular/http";
+
+import {GalleryConfig, GalleryModule} from 'ng-gallery';
+import { ModalAssetComponent } from './component/modal-asset/modal-asset.component';
+import { InstagramComponent } from './component/instagram/instagram.component';
+
 // import {FlickityModule} from "ngx-flickity";
 // import {VirtualScrollModule} from "angular2-virtual-scroll";
+
+export const galleryConfig : GalleryConfig = {
+  // ...
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     SerieComponent,
     HeaderComponent,
+    ModalAssetComponent,
+    InstagramComponent,
 
   ],
   imports: [
@@ -21,7 +32,8 @@ import {HttpModule, JsonpModule} from "@angular/http";
     MasonryModule,
     InfiniteScrollModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    GalleryModule.forRoot(galleryConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

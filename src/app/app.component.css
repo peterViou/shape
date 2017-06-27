@@ -1,7 +1,6 @@
 #main {
   padding-top: 6em;
   margin: auto;
-  /*background-color: lightblue;*/
 }
 #page-wrap{
   background-color: #dfdfdf;
@@ -9,7 +8,6 @@
 
 .centered {
   margin: auto;
-  /*background-color: red;*/
 }
 
 .article {
@@ -18,7 +16,11 @@
   width: 380px;
   margin: 0 1.2em;
   margin-bottom: 1.2em;
+}
+
+.article:hover{
   /*background-color: blue;*/
+  /*opacity: 1;*/
 }
 
 .refreshBtn {
