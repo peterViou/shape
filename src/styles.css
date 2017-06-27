@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+html {
+  overflow-y: scroll;
+}
+
+body {
   background-color: #dfdfdf;
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
