@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAsset} from "../../iasset";
+import {IAsset} from "../../../iasset";
 
 @Component({
-  selector: 'app-serie',
-  templateUrl: './serie.component.html',
-  styleUrls: ['./serie.component.css']
+  selector: 'app-asset-browser',
+  templateUrl: './asset-browser.component.html',
+  styleUrls: ['./asset-browser.component.scss']
 })
-export class SerieComponent implements OnInit {
+export class AssetBrowser implements OnInit {
   @Input() serie;
   firstAsset: IAsset;
   _isLoaded: boolean ;
@@ -22,7 +22,7 @@ export class SerieComponent implements OnInit {
 
   checkLoaded():void {
     this._isLoaded = true;
-    // console.log("L'image de la série : " + this.serie.title + " est loadée");
+    // console.log("L'image de la série : " + this.asset-browser.title + " est loadée");
   };
 
 

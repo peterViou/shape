@@ -1,0 +1,33 @@
+
+.centered {
+  margin: 0 auto;
+}
+
+.article {
+  line-height: 0.9em;
+  margin: 0;
+  width: 380px;
+  margin: 0 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.article:hover{
+  /*background-color: blue;*/
+  /*opacity: 1;*/
+}
+
+.refreshBtn {
+  position: fixed;
+  top: 10px !important;
+  right: 10px;
+  font-size: 50px;
+  z-index: 500;
+}
+
+.loadMore {
+  position: fixed;
+  top: 10px !important;
+  right: 200px;
+  font-size: 50px;
+  z-index: 500;
+}

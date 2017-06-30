@@ -3,28 +3,6 @@
   <app-instagram></app-instagram>
   <!--<button class="refreshBtn" (click)="refreshed()">Retrace</button>-->
   <!--<button class="loadMore" (click)="loadMore()">loadMore</button>-->
-  <div
-    id="main"
-    infinite-scroll
-    [infiniteScrollDistance]="3"
-    [infiniteScrollThrottle]="300"
-    (scrolled)="onScroll()"
-  >
-    <masonry class="centered" #myMasonry [useImagesLoaded]="false" [options]="myOptions" (layoutComplete)="peter($event)">
-      <masonry-brick class="article" *ngFor="let serie of series ; let i = index" >
-        <app-serie
-          [serie]="serie"
-          (click)="zoom()"
-        >
-        </app-serie>
-      </masonry-brick>
-    </masonry>
+  <app-scrollable-content></app-scrollable-content>
 
-    <app-modal-asset
-      [class.active]="active"
-    ></app-modal-asset>
-    <!--<div [flickity]="{cellAlign: 'left', percentPosition: true, groupCells: true}">-->
-    <!--<div  *ngFor="let child of children">{{child.title}}</div>-->
-    <!--</div>-->
-  </div>
 </div>
