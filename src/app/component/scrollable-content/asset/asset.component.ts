@@ -11,19 +11,12 @@ export class Asset implements OnInit {
   firstAsset: IAsset;
   _isLoaded: boolean ;
 
-  loadedImages: number = 0;
-
   ngOnInit(): void {
     this._isLoaded = false;
     this.firstAsset = this.brickData.assets[0];
   }
 
-
-
   checkLoaded():void {
     this._isLoaded = true;
-    // console.log("L'image de la série : " + this.asset.title + " est loadée");
   };
-
-
 }
