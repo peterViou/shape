@@ -63,8 +63,9 @@ export class ScrollableContentComponent implements OnInit {
   }
 
   zoom():void{
-    console.log("clicliclic");
-    !this.active;
+    console.log(this.series);
+    // !this.active;
+
   }
 
 }

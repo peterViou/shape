@@ -7,7 +7,7 @@ import {IAsset} from "../iasset";
   styleUrls: ['./asset.component.scss']
 })
 export class Asset implements OnInit {
-  @Input() serie;
+  @Input() brickData;
   firstAsset: IAsset;
   _isLoaded: boolean ;
 
@@ -15,7 +15,7 @@ export class Asset implements OnInit {
 
   ngOnInit(): void {
     this._isLoaded = false;
-    this.firstAsset = this.serie.assets[0];
+    this.firstAsset = this.brickData.assets[0];
   }
 
 

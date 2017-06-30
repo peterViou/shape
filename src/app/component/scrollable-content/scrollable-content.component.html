@@ -10,7 +10,7 @@
            (layoutComplete)="peter($event)">
     <masonry-brick class="article" *ngFor="let serie of series ; let i = index">
       <app-asset
-        [serie]="serie"
+        [brickData]="serie"
         (click)="zoom()"
       >
       </app-asset>
