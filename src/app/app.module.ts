@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {MasonryModule} from 'angular2-masonry';
 import {AppComponent} from './app.component';
-import {AssetBrowser} from './component/scrollable-content/asset-browser/asset-browser.component';
+import {Asset} from './component/scrollable-content/asset/asset.component';
 import {HeaderComponent} from './component/header/header.component';
 import {InfiniteScrollModule} from "angular2-infinite-scroll";
 import {HttpModule, JsonpModule} from "@angular/http";
@@ -22,7 +22,7 @@ export const galleryConfig : GalleryConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    AssetBrowser,
+    Asset,
     HeaderComponent,
     ModalAssetComponent,
     InstagramComponent,

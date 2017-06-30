@@ -1,7 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MasonryOptions} from "angular2-masonry";
-import {SeriesService} from "./series.service";
-import {ISerie} from "./iserie";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-root',
@@ -11,12 +8,12 @@ import {ISerie} from "./iserie";
 
 export class AppComponent implements OnInit {
 
-
   constructor() {
-
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+
+  }
 
 
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {SeriesService} from "../../series.service";
-import {ISerie} from "../../iserie";
+import {SeriesService} from "./series.service";
+import {ISerie} from "./iserie";
 import {MasonryOptions} from "angular2-masonry";
 
 @Component({

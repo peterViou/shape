@@ -9,11 +9,11 @@
   <masonry class="centered" #myMasonry [useImagesLoaded]="false" [options]="myOptions"
            (layoutComplete)="peter($event)">
     <masonry-brick class="article" *ngFor="let serie of series ; let i = index">
-      <app-asset-browser
+      <app-asset
         [serie]="serie"
         (click)="zoom()"
       >
-      </app-asset-browser>
+      </app-asset>
     </masonry-brick>
   </masonry>
 
