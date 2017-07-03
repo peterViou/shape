@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAsset} from "../iasset";
 import {ISerie} from "../iserie";
 
 @Component({
@@ -9,7 +8,6 @@ import {ISerie} from "../iserie";
 })
 export class Asset implements OnInit {
   @Input() serie:ISerie;
-
   _isLoaded: boolean ;
 
   ngOnInit(): void {

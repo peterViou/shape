@@ -9,15 +9,11 @@ import {ISerie} from "./iserie";
 
 @Injectable()
 export class DataService {
-  // private url:string = 'https://cors-test.appspot.com/test';
   private url: string = "./assets/data.json";
-  private errorMessage: string = "toto";
-
   private _data: ISerie[];
   private observable: Observable<ISerie[]>;
 
   constructor(private http: Http) {
-
   }
 
   getData(): Observable<ISerie[]> {
@@ -52,29 +48,5 @@ export class DataService {
         .share();
       return this.observable;
     }
-  }
-
-  getBricksOfData() {
-    let monCache;
-    this.getData().subscribe(
-      response => this._data = response,
-      error => this.errorMessage = < any > error
-    );
-
-    // this.getData().subscribe(response => this._dataCache = response, error => this.errorMessage = < any > error);
-    // let bricks :Observable<IAsset[]>;
-    console.log("nb of series = " + this._data)
-    //   for (var i = 0; i <= this._dataCache.length; i++) {
-    //
-    // }
-
-  }
-
-  displayData(): void {
-    // let a:IAsset = this.data[0].assets[0];
-    // console.log(a.thumbnail);
-    // var toto = this.getData();
-    // var asset: IAsset = toto[0].assets[0];
-    console.log('coucou : ' + this._data);
   }
 }

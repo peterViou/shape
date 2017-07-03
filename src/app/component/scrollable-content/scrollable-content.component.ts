@@ -1,91 +1,83 @@
-import {Component, Input, OnInit, ViewChild} from "@angular/core";
-import {SeriesService} from "./series.service";
+import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
-import {IAsset} from "./iasset";
 import {DataService} from "./data.service";
 import {ISerie} from "./iserie";
-import {Observable} from "rxjs/Observable";
 import {ActivatedRoute, Router} from "@angular/router";
+import {SeriesService} from "./series.service";
 
 @Component({
   selector: 'app-scrollable-content',
   templateUrl: './scrollable-content.component.html',
   styleUrls: ['./scrollable-content.component.css'],
-  providers: [SeriesService, DataService]
+  providers: [DataService, SeriesService]
 
 })
 export class ScrollableContentComponent implements OnInit {
 
-  completeSeries: ISerie[];
+  public displayedSeries: ISerie[];
 
-  displayedSeries: ISerie[];
-
-
-  active: boolean = false;
-  errorMessage: string = "this is the error message";
-  // public articles = [];
-  private cacheInitLength: number = 10;
-  private cacheMoreLength: number = 5;
-  private nb_articles: number = 0;
+  private _completeSeries: ISerie[];
+  private _currentSerie: ISerie = null;
+  private _cacheInitLength: number = 10;
+  private _cacheMoreLength: number = 4;
+  private _numberOfItemsInCache = this._cacheInitLength;
 
   // Instantiation of masonry's component "monMacon" declared in the template into the controller
   @ViewChild('myMasonry') private monMacon;
-  // @ViewChild('myModal') private myModal;
+
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
     resize: true,
     hiddenStyle: {opacity: 0},
     fitWidth: true,
-
   };
 
-  constructor(private _dataService: DataService, private route: ActivatedRoute, private router: Router) {
-console.log("CREATING ACROLL")
+  constructor(private _dataService: DataService, private _route: ActivatedRoute, private _router: Router) {
+    console.log(">>> Creating ScrollableContentComponent")
   }
 
   ngOnInit() {
-    let self = this;
-    if (!this.completeSeries ){
-      self._dataService.getData().do(series => this.displayedSeries = series.slice(0,this.cacheInitLength)).subscribe(series => this.completeSeries = series);
+    if (!this._completeSeries) {
+      console.log(">>> Fetching Data")
+      this._dataService.getData()
+        .do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
     }
+    console.log(">>> Configuring the router")
+    this._route.params
+      .map(params => params["id"])
+      .do(id => console.log("id ", id))
+      .do(id => {
+        if (id != "latest") {
+          let serieToDisplay = this._completeSeries.find(serie => serie.title === id);
+          console.log("serieToDisplay ", serieToDisplay);
+          this.displayedSeries = serieToDisplay.assets.map(asset => {
+            return {
+              assets: [asset],
+              title: serieToDisplay.title,
+              artist: serieToDisplay.artist
+            }
+          })
+        }
+      })
+      .subscribe();
+  }
 
-    this.route.params
-      .subscribe(params => console.log("params = ",params))
+  public onScroll(): void {
+    const newData = this._completeSeries.slice(this._numberOfItemsInCache, this._numberOfItemsInCache + this._cacheMoreLength);
+    this.displayedSeries.splice(this.displayedSeries.length, 0, ...newData);
+    this._numberOfItemsInCache += this._cacheMoreLength;
+  }
 
+  public onBrickClick(brickID: number): void {
+    this._router.navigate(["/series/" + this.displayedSeries[brickID].title]);
   }
 
   /**
    * Force the redraw of Masonry
    */
-  refreshed(): void {
-    console.log("refreshed !")
+
+  masonryRedraw() {
     this.monMacon.layout();
-  }
-
-  peter(items: any) {
-    var toto: any;
-    // console.log("Masonry layout is completed : " + items.length)
-    this.monMacon.layout();
-  }
-
-  private offset = this.cacheInitLength;
-
-  onScroll(): void {
-    const newData = this.completeSeries.slice(this.offset,this.offset + this.cacheMoreLength);
-    this.displayedSeries.splice(this.displayedSeries.length, 0, ...newData);
-    this.offset+=this.cacheMoreLength;
-
-  }
-
-  onBrickClick(brickID: number): void {
-    console.log("click on brick #" + this.displayedSeries[brickID].title);
-    this.router.navigate(["/"+this.displayedSeries[brickID].title])
-
-
-    // this._seriesService.displayData(this.dataCache, brickID);
-    // this.bricks = this._seriesService.getSerieOfSeries(this.dataCache, brickID);
-    // !this.active;
-
   }
 
 }

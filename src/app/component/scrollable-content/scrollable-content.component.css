@@ -15,11 +15,6 @@
   margin-bottom: 1.2em;
 }
 
-.article:hover{
-  /*background-color: blue;*/
-  /*opacity: 1;*/
-}
-
 .refreshBtn {
   position: fixed;
   top: 10px !important;
