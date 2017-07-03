@@ -9,7 +9,8 @@ import {IAsset} from "./iasset";
 @Injectable()
 export class SeriesService {
   private _jsonFileURL: string = "./assets/data.json";
-  // private _series: ISerie[];
+  // private _series: Observable<ISerie[]>;
+  private _dataCache : ISerie[];
 
   errorMessage: string = "server error";
 
@@ -23,13 +24,26 @@ export class SeriesService {
     }).catch(this.handleError);
   }
 
+
   displayData(series: ISerie[], serieID: number) {
     let maSerie: ISerie = series[serieID];
     let monFisrtItem: IAsset = maSerie.assets[0];
     console.log("click on  " + maSerie.title + " / " + monFisrtItem.title + " / " + monFisrtItem.thumbnail);
   };
 
-  getAssets(series: ISerie[], serieID: number): IAsset[] {
+  // getBricksOfSeries(): Observable<IAsset[]> {
+  getBricksOfSeries()  {
+    let monCache;
+    this.getSeries().subscribe(response => this._dataCache = response, error => this.errorMessage = < any > error);
+    let bricks :Observable<IAsset[]>;
+    console.log("nb of series = " + this._dataCache)
+  //   for (var i = 0; i <= this._dataCache.length; i++) {
+  //
+  // }
+
+  }
+
+  getBricks(series: ISerie[], serieID: number): IAsset[] {
     let maSerie: ISerie = series[serieID];
     let assets: IAsset[];
     for (var i = 0; i <= maSerie.assets.length; i++) {

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IAsset} from "../iasset";
+import {ISerie} from "../iserie";
 
 @Component({
   selector: 'app-asset',
@@ -7,13 +8,12 @@ import {IAsset} from "../iasset";
   styleUrls: ['./asset.component.scss']
 })
 export class Asset implements OnInit {
-  @Input() brickData;
-  firstAsset: IAsset;
+  @Input() serie:ISerie;
+
   _isLoaded: boolean ;
 
   ngOnInit(): void {
     this._isLoaded = false;
-    this.firstAsset = this.brickData.assets[0];
   }
 
   checkLoaded():void {

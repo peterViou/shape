@@ -11,6 +11,7 @@ import {GalleryConfig, GalleryModule} from 'ng-gallery';
 import { ModalAssetComponent } from './component/modal-asset/modal-asset.component';
 import { InstagramComponent } from './component/instagram/instagram.component';
 import { ScrollableContentComponent } from './component/scrollable-content/scrollable-content.component';
+import {RouterModule, Routes} from "@angular/router";
 
 // import {FlickityModule} from "ngx-flickity";
 // import {VirtualScrollModule} from "angular2-virtual-scroll";
@@ -18,6 +19,11 @@ import { ScrollableContentComponent } from './component/scrollable-content/scrol
 export const galleryConfig : GalleryConfig = {
   // ...
 }
+
+const appRoutes: Routes = [
+  { path: '', component: ScrollableContentComponent },
+  { path: ':serieTitle',      component: ScrollableContentComponent },
+];
 
 @NgModule({
   declarations: [
@@ -34,6 +40,7 @@ export const galleryConfig : GalleryConfig = {
     MasonryModule,
     InfiniteScrollModule,
     HttpModule,
+    RouterModule.forRoot(appRoutes),
     JsonpModule,
     GalleryModule.forRoot(galleryConfig)
   ],

@@ -3,11 +3,11 @@
   [class.loaded]="_isLoaded"
 >
   <img class="image"
-       src={{firstAsset.thumbnail}}
+       src={{serie.assets[0].thumbnail}}
        (load)="checkLoaded()"
        [class.loaded]="_isLoaded"
   >
-  <div class="title">{{brickData.title}}</div>
-  <div class="artist">by {{brickData.artist}}</div>
+  <div class="title">{{serie.title}}</div>
+  <div class="artist">by {{serie.artist}}</div>
 </a>
 
