@@ -8,9 +8,8 @@ import {SeriesService} from "./series.service";
 @Component({
   selector: 'app-scrollable-content',
   templateUrl: './scrollable-content.component.html',
-  styleUrls: ['./scrollable-content.component.css'],
+  styleUrls: ['./scrollable-content.component.scss'],
   providers: [DataService, SeriesService]
-
 })
 
 // TODO : étrange, lorsque je supprime SeriesService des provider, >>>erreur
