@@ -12,6 +12,9 @@ import {SeriesService} from "./series.service";
   providers: [DataService, SeriesService]
 
 })
+
+// TODO : étrange, lorsque je supprime SeriesService des provider, >>>erreur
+
 export class ScrollableContentComponent implements OnInit {
 
   public displayedSeries: ISerie[];
@@ -32,7 +35,9 @@ export class ScrollableContentComponent implements OnInit {
     fitWidth: true,
   };
 
-  constructor(private _dataService: DataService, private _route: ActivatedRoute, private _router: Router) {
+  constructor(private _dataService: DataService,
+              private _route: ActivatedRoute,
+              private _router: Router) {
     console.log(">>> Creating ScrollableContentComponent")
   }
 
@@ -75,8 +80,7 @@ export class ScrollableContentComponent implements OnInit {
   /**
    * Force the redraw of Masonry
    */
-
-  masonryRedraw() {
+  public masonryRedraw() {
     this.monMacon.layout();
   }
 

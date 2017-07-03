@@ -9,8 +9,12 @@
     class="centered"
     #myMasonry
     [options]="myOptions"
-    (layoutComplete)="masonryRedraw()">
-    <masonry-brick class="article" *ngFor="let brick of displayedSeries ; let i = index">
+    (layoutComplete)="masonryRedraw()"
+  >
+    <masonry-brick
+      class="article"
+      *ngFor="let brick of displayedSeries ; let i = index"
+    >
       <app-asset
         [serie]="brick"
         (click)="onBrickClick(i)"
