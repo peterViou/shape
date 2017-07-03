@@ -17,22 +17,20 @@ import {SeriesService} from "./series.service";
 export class ScrollableContentComponent implements OnInit {
 
   public displayedSeries: ISerie[];
-
-  private _completeSeries: ISerie[];
-  private _currentSerie: ISerie = null;
-  private _cacheInitLength: number = 10;
-  private _cacheMoreLength: number = 4;
-  private _numberOfItemsInCache = this._cacheInitLength;
-
-  // Instantiation of masonry's component "monMacon" declared in the template into the controller
-  @ViewChild('myMasonry') private monMacon;
-
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
     resize: true,
     hiddenStyle: {opacity: 0},
     fitWidth: true,
   };
+
+  private _completeSeries: ISerie[];
+  private _currentSerie: ISerie = null;
+  private _cacheInitLength: number = 10; // should depend of the window widths
+  private _cacheMoreLength: number = 4; // should depend of the window widths
+  private _numberOfItemsInCache = this._cacheInitLength;
+
+  @ViewChild('myMasonry') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
   constructor(private _dataService: DataService,
               private _route: ActivatedRoute,
@@ -41,6 +39,7 @@ export class ScrollableContentComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Fetch the data only the first time
     if (!this._completeSeries) {
       console.log(">>> Fetching Data")
       this._dataService.getData()
@@ -72,15 +71,15 @@ export class ScrollableContentComponent implements OnInit {
     this._numberOfItemsInCache += this._cacheMoreLength;
   }
 
-  public onBrickClick(brickID: number): void {
-    this._router.navigate(["/series/" + this.displayedSeries[brickID].title]);
+  public onBrickClick(serieID: number): void {
+    this._router.navigate(["/series/" + this.displayedSeries[serieID].title]);
   }
 
   /**
    * Force the redraw of Masonry
    */
   public masonryRedraw() {
-    this.monMacon.layout();
+    this._masonryInstance.layout();
   }
 
 }
