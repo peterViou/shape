@@ -4,7 +4,6 @@
     "artist": "Tobias",
     "assets": [
       {
-        "title": "01",
         "thumbnail": "https://lorempixel.com/300/300"
       }
     ]
@@ -14,15 +13,12 @@
     "artist": "Tobias",
     "assets": [
       {
-        "title": "01",
         "thumbnail": "https://lorempixel.com/300/500"
       },
       {
-        "title": "02",
         "thumbnail": "https://lorempixel.com/300/300"
       },
       {
-        "title": "03",
         "thumbnail": "https://lorempixel.com/300/300"
       }
     ]
@@ -32,15 +28,12 @@
     "artist": "Tobias",
     "assets": [
       {
-        "title": "01",
         "thumbnail": "https://lorempixel.com/300/500"
       },
       {
-        "title": "02",
         "thumbnail": ""
       },
       {
-        "title": "03",
         "thumbnail": ""
       }
     ]
@@ -49,15 +42,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/500"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -66,15 +56,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/200"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -83,15 +70,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -100,15 +84,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -117,15 +98,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -134,15 +112,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -151,15 +126,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -168,15 +140,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -185,15 +154,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -202,15 +168,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
-      "thumbnail": "https://lorempixel.com/300/400"
+      "thumbnail": "https://lorempixel.com/520/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -219,15 +182,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
-      "thumbnail": "https://lorempixel.com/300/400"
+      "thumbnail": "https://lorempixel.com/450/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -236,15 +196,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
-      "thumbnail": "https://lorempixel.com/300/400"
+      "thumbnail": "https://lorempixel.com/300/520"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -253,15 +210,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
-      "thumbnail": "https://lorempixel.com/300/400"
+      "thumbnail": "https://lorempixel.com/300/450"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -270,15 +224,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
-      "thumbnail": "https://lorempixel.com/300/400"
+      "thumbnail": "https://lorempixel.com/340/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -287,15 +238,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
-      "thumbnail": "https://lorempixel.com/300/400"
+      "thumbnail": "https://lorempixel.com/300/1400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -304,15 +252,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/300/400"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -321,15 +266,12 @@
   "artist": "Tobias",
   "assets": [
     {
-      "title": "01",
       "thumbnail": "https://lorempixel.com/600/500"
     },
     {
-      "title": "02",
       "thumbnail": ""
     },
     {
-      "title": "03",
       "thumbnail": ""
     }
   ]
@@ -339,15 +281,12 @@
     "artist": "Laroche",
     "assets": [
       {
-        "title": "01",
         "thumbnail": "https://lorempixel.com/450/500"
       },
       {
-        "title": "02",
         "thumbnail": ""
       },
       {
-        "title": "03",
         "thumbnail": ""
       }
     ]

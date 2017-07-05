@@ -3,17 +3,13 @@ import {MasonryOptions} from "angular2-masonry";
 import {DataService} from "./data.service";
 import {ISerie} from "./iserie";
 import {ActivatedRoute, Router} from "@angular/router";
-import {SeriesService} from "./series.service";
 
 @Component({
   selector: 'app-scrollable-content',
   templateUrl: './scrollable-content.component.html',
   styleUrls: ['./scrollable-content.component.scss'],
-  providers: [DataService, SeriesService]
+  providers: [DataService]
 })
-
-// TODO : étrange, lorsque je supprime SeriesService des provider, >>>erreur
-
 export class ScrollableContentComponent implements OnInit {
 
   public displayedSeries: ISerie[];
@@ -42,8 +38,10 @@ export class ScrollableContentComponent implements OnInit {
     // Fetch the data only the first time
     if (!this._completeSeries) {
       console.log(">>> Fetching Data")
-      this._dataService.getData()
-        .do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
+      const toto = this._dataService.getData();
+      console.log("toto ",toto.do, toto);
+      toto.do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
+
     }
     console.log(">>> Configuring the router")
     this._route.params
