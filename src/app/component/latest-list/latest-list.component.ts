@@ -40,7 +40,6 @@ export class ScrollableContentComponent implements OnInit {
       const toto = this._dataService.getData();
       console.log("toto ",toto.do, toto);
       toto.do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
-
     }
 
   }
@@ -51,7 +50,7 @@ export class ScrollableContentComponent implements OnInit {
     this._numberOfItemsInCache += this._cacheMoreLength;
   }
 
-  public onBrickClick(serieID: number): void {
+  public onSerieClick(serieID: number): void {
     this._dataService.serieToDisplay = this.displayedSeries[serieID];
     this._router.navigate(["/series/" + this.displayedSeries[serieID].title]);
   }
