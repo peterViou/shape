@@ -6,8 +6,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-scrollable-content',
-  templateUrl: './scrollable-content.component.html',
-  styleUrls: ['./scrollable-content.component.scss'],
+  templateUrl: './latest-list.component.html',
+  styleUrls: ['./latest-list.component.scss'],
 })
 export class ScrollableContentComponent implements OnInit {
 

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrollableContentComponent } from './scrollable-content.component';
+import { ScrollableContentComponent } from './latest-list.component';
 
 describe('ScrollableContentComponent', () => {
   let component: ScrollableContentComponent;

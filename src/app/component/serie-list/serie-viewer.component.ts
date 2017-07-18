@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
-import {ISerie} from "../scrollable-content/iserie";
+import {ISerie} from "../latest-list/iserie";
 import {MasonryOptions} from "angular2-masonry";
-import {DataService} from "../scrollable-content/data.service";
+import {DataService} from "../latest-list/data.service";
 
 @Component({
   selector: 'app-serie-viewer',
