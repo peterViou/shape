@@ -11,15 +11,15 @@
     [options]="myOptions"
     (layoutComplete)="masonryRedraw()"
   >
-        <app-asset
-          masonry-brick
-          class="article"
-          *ngFor="let brick of displayedSeries ; let i = index"
-          (click)="onBrickClick(i)"
-          [serie]="brick"
+    <app-asset
+      masonry-brick
+      class="article"
+      *ngFor="let brick of displayedAssets ; let i = index"
+      (click)="onBrickClick(i)"
+      [serie]="brick"
 
-        >
-        </app-asset>
+    >
+    </app-asset>
 
   </masonry>
 </div>

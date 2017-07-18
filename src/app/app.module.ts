@@ -10,10 +10,12 @@ import { ModalAssetComponent } from './component/modal-asset/modal-asset.compone
 import { InstagramComponent } from './component/instagram/instagram.component';
 import { ScrollableContentComponent } from './component/scrollable-content/scrollable-content.component';
 import {RouterModule, Routes} from "@angular/router";
+import { SerieViewerComponent } from './component/serie-viewer/serie-viewer.component';
+import {DataService} from "./component/scrollable-content/data.service";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: "/series/latest", pathMatch: "full"},
-  { path: 'series/:id',  component: ScrollableContentComponent },
+  { path: '',  component: ScrollableContentComponent },
+  { path: 'series/:id',  component: SerieViewerComponent },
 ];
 
 @NgModule({
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
     ModalAssetComponent,
     InstagramComponent,
     ScrollableContentComponent,
+    SerieViewerComponent,
 
   ],
   imports: [
@@ -34,7 +37,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     JsonpModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

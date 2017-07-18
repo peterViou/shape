@@ -6,12 +6,15 @@ import {ISerie} from "./iserie";
 
 @Injectable()
 export class DataService {
-  private url: string = "./assets/data.json";
+  // private url: string = "./assets/data.json";// loremPixel
+  private url: string = "./assets/dataLocal.json";// photos locales
   private _data: ISerie[];
   private observable: Observable<ISerie[]>;
 
   constructor(private http: Http) {
   }
+
+  serieToDisplay:ISerie;
 
   getData(): Observable<ISerie[]> {
     if (this._data) {
