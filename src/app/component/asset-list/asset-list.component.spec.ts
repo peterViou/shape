@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SerieViewerComponent } from './serie-viewer.component';
+import { SerieViewerComponent } from './asset-list.component';
 
 describe('SerieViewerComponent', () => {
   let component: SerieViewerComponent;

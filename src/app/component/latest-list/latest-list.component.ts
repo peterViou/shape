@@ -5,7 +5,7 @@ import {ISerie} from "./iserie";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-scrollable-content',
+  selector: 'app-latest-list',
   templateUrl: './latest-list.component.html',
   styleUrls: ['./latest-list.component.scss'],
 })

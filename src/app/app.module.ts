@@ -10,7 +10,7 @@ import { ModalAssetComponent } from './component/modal-asset/modal-asset.compone
 import { InstagramComponent } from './component/instagram/instagram.component';
 import { ScrollableContentComponent } from './component/latest-list/latest-list.component';
 import {RouterModule, Routes} from "@angular/router";
-import { SerieViewerComponent } from './component/serie-list/serie-viewer.component';
+import { SerieViewerComponent } from './component/asset-list/asset-list.component';
 import {DataService} from "./component/latest-list/data.service";
 
 const appRoutes: Routes = [

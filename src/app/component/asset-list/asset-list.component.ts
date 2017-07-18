@@ -4,9 +4,9 @@ import {MasonryOptions} from "angular2-masonry";
 import {DataService} from "../latest-list/data.service";
 
 @Component({
-  selector: 'app-serie-viewer',
-  templateUrl: './serie-viewer.component.html',
-  styleUrls: ['./serie-viewer.component.scss']
+  selector: 'app-asset-list',
+  templateUrl: './asset-list.component.html',
+  styleUrls: ['./asset-list.component.scss']
 })
 export class SerieViewerComponent implements OnInit {
 
