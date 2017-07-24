@@ -13,11 +13,10 @@
   >
     <app-asset
       masonry-brick
-      class="serie"
+      class="asset"
       *ngFor="let brick of displayedAssets ; let i = index"
-      (click)="onBrickClick(i)"
+      (click)="onAssetClick(i)"
       [serie]="brick"
-
     >
     </app-asset>
 

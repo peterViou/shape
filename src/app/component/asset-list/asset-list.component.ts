@@ -38,7 +38,8 @@ export class SerieViewerComponent implements OnInit {
   }
 
 
-  public onBrickClick(serieID: number): void {
+  public onAssetClick(assetID: number): void {
+    console.log("assetID : " + assetID);
    // TODO
   }
 

@@ -37,11 +37,8 @@ export class ScrollableContentComponent implements OnInit {
     // Fetch the data only the first time
     if (!this._completeSeries) {
       console.log(">>> Fetching Data")
-      const toto = this._dataService.getData();
-      console.log("toto ",toto.do, toto);
-      toto.do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
+      this._dataService.getData().do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
     }
-
   }
 
   public onScroll(): void {
