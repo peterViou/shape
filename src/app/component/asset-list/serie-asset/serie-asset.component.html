@@ -1,0 +1,11 @@
+<a
+  class="serie"
+  [class.loaded]="isLoaded"
+>
+  <img class="image"
+       src={{asset.thumbnail}}
+       (load)="checkLoaded()"
+       [class.loaded]="isLoaded"
+  >
+</a>
+

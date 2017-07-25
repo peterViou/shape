@@ -1,0 +1,16 @@
+.serie{
+  visibility:hidden;
+}
+
+.image{
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  margin: 0 0 .3em;
+  width: 100%;
+}
+
+.loaded{
+  opacity:1;
+  visibility:visible;
+}
+

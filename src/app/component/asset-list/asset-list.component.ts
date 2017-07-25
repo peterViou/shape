@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
-import {ISerie} from "../latest-list/iserie";
 import {MasonryOptions} from "angular2-masonry";
 import {DataService} from "../latest-list/data.service";
+import {Lightbox} from 'angular2-lightbox';
+import {IAsset} from "../latest-list/iasset";
 
 @Component({
   selector: 'app-asset-list',
@@ -10,7 +11,7 @@ import {DataService} from "../latest-list/data.service";
 })
 export class SerieViewerComponent implements OnInit {
 
-  public displayedAssets: ISerie[];
+  public displayedAssets: IAsset[];
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
     resize: true,
@@ -18,29 +19,23 @@ export class SerieViewerComponent implements OnInit {
     fitWidth: true,
   };
 
+  @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
-  @ViewChild('myMasonry') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
-
-  constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService, private _lightbox: Lightbox) {
     console.log(">>> Creating ScrollableContentComponent")
   }
 
   ngOnInit() {
-
     const serieToDisplay = this._dataService.serieToDisplay;
-    this.displayedAssets = serieToDisplay.assets.map(asset => {
-      return {
-        assets: [asset],
-        title: serieToDisplay.title,
-        artist: serieToDisplay.artist
-      }
-    })
+    this.displayedAssets = serieToDisplay.assets;
   }
 
 
   public onAssetClick(assetID: number): void {
     console.log("assetID : " + assetID);
-   // TODO
+
+    // this._lightbox.open(this.bigImages, assetID);
+    // TODO
   }
 
   /**
@@ -49,6 +44,5 @@ export class SerieViewerComponent implements OnInit {
   public masonryRedraw() {
     this._masonryInstance.layout();
   }
-
 
 }

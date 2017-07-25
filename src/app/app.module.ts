@@ -12,6 +12,8 @@ import { ScrollableContentComponent } from './component/latest-list/latest-list.
 import {RouterModule, Routes} from "@angular/router";
 import { SerieViewerComponent } from './component/asset-list/asset-list.component';
 import {DataService} from "./component/latest-list/data.service";
+import { LightboxModule } from 'angular2-lightbox';
+import { SerieAssetComponent } from './component/asset-list/serie-asset/serie-asset.component';
 
 const appRoutes: Routes = [
   { path: '',  component: ScrollableContentComponent },
@@ -27,6 +29,7 @@ const appRoutes: Routes = [
     InstagramComponent,
     ScrollableContentComponent,
     SerieViewerComponent,
+    SerieAssetComponent,
 
   ],
   imports: [
@@ -36,6 +39,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     JsonpModule,
+    LightboxModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
