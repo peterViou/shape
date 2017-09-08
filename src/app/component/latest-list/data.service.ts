@@ -7,7 +7,8 @@ import {ISerie} from "./iserie";
 @Injectable()
 export class DataService {
   // private url: string = "./assets/data.json";// loremPixel
-  private url: string = "./assets/dataLocal.json";// photos locales
+  // private url: string = "./assets/dataLocal.json";// photos locales
+  private url: string = "./assets/dataShape.json";// photos shape local
   private _data: ISerie[];
   private observable: Observable<ISerie[]>;
 

@@ -7,6 +7,7 @@ import {ISerie} from "../iserie";
   styleUrls: ['./asset.component.scss']
 })
 export class Asset implements OnInit {
+  url:string = "http://www.shape-production.fr/photos/"
   @Input() serie:ISerie;
   _isLoaded: boolean ;
 

@@ -10,6 +10,8 @@ import {IAsset} from "../../latest-list/iasset";
 export class SerieAssetComponent implements OnInit {
   @Input() asset:IAsset;
   isLoaded: boolean ;
+  siteURL:string ="http://www.shape-production.fr/photos/";
+
 
   ngOnInit(): void {
     this.isLoaded = false;

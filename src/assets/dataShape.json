@@ -1,0 +1,158 @@
+[
+  {
+    "title": "1",
+    "artist": "Thomas Sabo",
+    "assets": [
+      {
+        "thumbnail": "01-Thomas_Sabo-01.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-02.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-03.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-04.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-05.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-06.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-07.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-08.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-09.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-10.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-11.jpg"
+      },
+      {
+        "thumbnail": "01-Thomas_Sabo-12.jpg"
+      }
+    ]
+  },
+  {
+    "title": "2 - Marie Claire US",
+    "artist": "Emanuele-Fontanesi",
+    "assets": [
+      {
+        "thumbnail": "02-Marie_claire_US-01.jpg"
+      }
+    ]
+  },
+  {
+    "title": "5 - Junko Shimada",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "05-Junko_Shimada-01.jpg"
+      }
+    ]
+  }, {
+  "title": "6 - Vogue Eyewear Brazil",
+  "artist": "Adriana Lima",
+  "assets": [
+    {
+      "thumbnail": "06-Vogue_Eyewear_Brazil-01.jpg"
+    }
+  ]
+}, {
+  "title": "7 - G Star",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "07-G_Star-01.jpeg"
+    }
+  ]
+}, {
+  "title": "8 - Edition 10",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "08-Edition_10-01.jpg"
+    }
+  ]
+},{
+  "title": "9 - Joie",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "09-Joie-01.jpg"
+    }
+  ]
+},{
+  "title": "10 - Current",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "10-Current-01.jpeg"
+    }
+  ]
+},{
+  "title": "11 - Vogue Eyewear India",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "11-Vogue_Eyewear_India-01.jpg"
+    }
+  ]
+},{
+  "title": "13 - Vogue India",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "13-Vogue_India-01.jpg"
+    }
+  ]
+},{
+  "title": "14 - Vogue Eyewear Thailand",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "14-Vogue_Eyewear_Thailand-01.jpg"
+    }
+  ]
+},{
+  "title": "15 - Blue Illusion",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "15-Blue_Illusion-01.jpg"
+    }
+  ]
+},{
+  "title": "16 - Pop",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "16-Pop-01.jpg"
+    }
+  ]
+},{
+  "title": "17 - Another Magazine",
+  "artist": "Charlie Engman",
+  "assets": [
+    {
+      "thumbnail": "17-Another_Magazine_01.jpg"
+    }
+  ]
+},{
+  "title": "18 - Vogue Brazil",
+  "artist": "",
+  "assets": [
+    {
+      "thumbnail": "18-Vogue Brazil-01.jpeg"
+    }
+  ]
+}
+]

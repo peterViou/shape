@@ -3,7 +3,7 @@
   [class.loaded]="isLoaded"
 >
   <img class="image"
-       src={{asset.thumbnail}}
+       src={{siteURL}}{{asset.thumbnail}}
        (load)="checkLoaded()"
        [class.loaded]="isLoaded"
   >

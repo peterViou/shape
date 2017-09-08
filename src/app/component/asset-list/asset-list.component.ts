@@ -17,6 +17,7 @@ export interface IAlbum {
 })
 export class SerieViewerComponent implements OnInit {
 
+
   public displayedAssets: IAsset[];
   public displayedAlbum: IAlbum[];
   public myOptions: MasonryOptions = {
