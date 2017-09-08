@@ -19,13 +19,14 @@ export class ScrollableContentComponent implements OnInit {
     fitWidth: true,
   };
 
-  private _completeSeries: ISerie[];
+  private _fetchedSeries: ISerie[] = null;
+  private hasBeenFormated:boolean = false;
   private _currentSerie: ISerie = null;
   private _cacheInitLength: number = 10; // should depend of the window widths
   private _cacheMoreLength: number = 4; // should depend of the window widths
   private _numberOfItemsInCache = this._cacheInitLength;
-
-  @ViewChild('myMasonry') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
+  // _masonryInstance : Variable linked to masonry's component instantiated in the template
+  @ViewChild('myMasonry') private _masonryInstance;
 
   constructor(private _dataService: DataService,
               private _route: ActivatedRoute,
@@ -35,14 +36,36 @@ export class ScrollableContentComponent implements OnInit {
 
   ngOnInit() {
     // Fetch the data only the first time
-    if (!this._completeSeries) {
+    if (!this._fetchedSeries) {
       console.log(">>> Fetching Data")
-      this._dataService.getData().do(series => this.displayedSeries = series.slice(0, this._cacheInitLength)).subscribe(series => this._completeSeries = series);
+      this._dataService.getData()
+        .do(series =>
+          this.displayedSeries = series
+            .slice(0, this._cacheInitLength))
+        // .finally(this.handleComplete)
+        .subscribe(series =>
+          this._fetchedSeries = this.formatData(series));
     }
   }
 
+  formatData(mySeries: ISerie[]): ISerie[] {
+    if(!this.hasBeenFormated){
+      mySeries
+        .map(result => {
+          // result.title =result.title;
+          result.assets.forEach(asset => {
+            asset.thumbnail = "http://www.shape-production.fr/photos/" + asset.thumbnail;
+          })
+
+          return result;
+        });
+    }
+    console.log("FORMAT DATA ahahahaha", mySeries);
+    return mySeries
+  }
+
   public onScroll(): void {
-    const newData = this._completeSeries.slice(this._numberOfItemsInCache, this._numberOfItemsInCache + this._cacheMoreLength);
+    const newData = this._fetchedSeries.slice(this._numberOfItemsInCache, this._numberOfItemsInCache + this._cacheMoreLength);
     this.displayedSeries.splice(this.displayedSeries.length, 0, ...newData);
     this._numberOfItemsInCache += this._cacheMoreLength;
   }
@@ -56,6 +79,7 @@ export class ScrollableContentComponent implements OnInit {
    * Force the redraw of Masonry
    */
   public masonryRedraw() {
+    // console.log('complete series = ' + this._completeSeries);
     this._masonryInstance.layout();
   }
 

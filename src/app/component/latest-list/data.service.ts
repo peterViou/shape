@@ -8,10 +8,10 @@ import {ISerie} from "./iserie";
 export class DataService {
   // private url: string = "./assets/data.json";// loremPixel
   // private url: string = "./assets/dataLocal.json";// photos locales
-  private url: string = "./assets/dataShape.json";// photos shape local
+  private jsonURL: string = "./assets/dataShape.json";// photos shape local
   private _data: ISerie[];
   private observable: Observable<ISerie[]>;
-
+  
   constructor(private http: Http) {
   }
 
@@ -30,7 +30,7 @@ export class DataService {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       // create the request, store the `Observable` for subsequent subscribers
-      this.observable = this.http.get(this.url, {
+      this.observable = this.http.get(this.jsonURL, {
         headers: headers
       })
         .map(response => {

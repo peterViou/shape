@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ISerie} from "../../latest-list/iserie";
 import {IAsset} from "../../latest-list/iasset";
 
 @Component({
@@ -10,8 +9,6 @@ import {IAsset} from "../../latest-list/iasset";
 export class SerieAssetComponent implements OnInit {
   @Input() asset:IAsset;
   isLoaded: boolean ;
-  siteURL:string ="http://www.shape-production.fr/photos/";
-
 
   ngOnInit(): void {
     this.isLoaded = false;

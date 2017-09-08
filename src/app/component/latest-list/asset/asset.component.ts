@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ISerie} from "../iserie";
+import {IAsset} from "../iasset";
 
 @Component({
   selector: 'app-asset',
@@ -7,15 +8,16 @@ import {ISerie} from "../iserie";
   styleUrls: ['./asset.component.scss']
 })
 export class Asset implements OnInit {
-  url:string = "http://www.shape-production.fr/photos/"
-  @Input() serie:ISerie;
-  _isLoaded: boolean ;
+  @Input() serie: ISerie;
+  public firstItem: IAsset;
+  _isLoaded: boolean;
 
   ngOnInit(): void {
     this._isLoaded = false;
+    this.firstItem = this.serie.assets[0];
   }
 
-  checkLoaded():void {
+  checkLoaded(): void {
     this._isLoaded = true;
   };
 }

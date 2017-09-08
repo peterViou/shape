@@ -17,7 +17,6 @@ export interface IAlbum {
 })
 export class SerieViewerComponent implements OnInit {
 
-
   public displayedAssets: IAsset[];
   public displayedAlbum: IAlbum[];
   public myOptions: MasonryOptions = {
@@ -26,7 +25,6 @@ export class SerieViewerComponent implements OnInit {
     hiddenStyle: {opacity: 0},
     fitWidth: true,
   };
-
 
   @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
@@ -37,18 +35,14 @@ export class SerieViewerComponent implements OnInit {
   ngOnInit() {
     const serieToDisplay = this._dataService.serieToDisplay;
     this.displayedAssets = serieToDisplay.assets;
-
     this.displayedAlbum = this.displayedAssets.map(album => {
       return {
-        // assets: [album],
         src : album.thumbnail,
         caption: album.thumbnail,
         thumb: album.thumbnail
       }
-    })
-
+    });
     console.log("displayedAlbum : " + this.displayedAlbum[0].src);
-
   }
 
 
