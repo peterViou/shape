@@ -29,7 +29,7 @@ export class SerieViewerComponent implements OnInit {
   @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
   constructor(private _dataService: DataService, private _lightbox: Lightbox) {
-    console.log(">>> Creating ScrollableContentComponent")
+    console.log(">>> Creating SERIE VIEWER")
   }
 
   ngOnInit() {

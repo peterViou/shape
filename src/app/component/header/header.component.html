@@ -1,14 +1,14 @@
 <div class="front" [class.init]="ngOnInit()">
-  <a id="logo" href="/"></a>
+  <a id="logo" routerLink="/latest" routerLinkActive="active"></a>
   <nav>
     <ul>
-      <li class="menuItem"><a class="menuItemLink current" href="/">Latest</a></li>
+      <li class="menuItem"><a class="menuItemLink current" routerLink="/latest" routerLinkActive="active" >Latest</a></li>
       <li class="menuItem">//</li>
-      <li class="menuItem"><a class="menuItemLink" href="/services" >Services</a></li>
+      <li class="menuItem"><a class="menuItemLink" routerLink="/services" routerLinkActive="active" >Services</a></li>
       <li class="menuItem">//</li>
-      <li class="menuItem"><a class="menuItemLink" href="/clients" >Clients</a></li>
+      <li class="menuItem"><a class="menuItemLink" routerLink="/clients" routerLinkActive="active" >Clients</a></li>
       <li class="menuItem">//</li>
-      <li class="menuItem"><a class="menuItemLink" href="/contact" >Contact</a></li>
+      <li class="menuItem"><a class="menuItemLink" routerLink="/contact" routerLinkActive="active" >Contact</a></li>
     </ul>
   </nav>
 </div>

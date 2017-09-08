@@ -11,7 +11,7 @@ export class DataService {
   private jsonURL: string = "./assets/dataShape.json";// photos shape local
   private _data: ISerie[];
   private observable: Observable<ISerie[]>;
-  
+
   constructor(private http: Http) {
   }
 

@@ -14,10 +14,12 @@ import { SerieViewerComponent } from './component/asset-list/asset-list.componen
 import {DataService} from "./component/latest-list/data.service";
 import { LightboxModule } from 'angular2-lightbox';
 import { SerieAssetComponent } from './component/asset-list/serie-asset/serie-asset.component';
+import {PageNotFoundComponent} from "./component/page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
-  { path: '',  component: ScrollableContentComponent },
+  { path: 'latest',  component: ScrollableContentComponent },
   { path: 'series/:id',  component: SerieViewerComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -30,6 +32,7 @@ const appRoutes: Routes = [
     ScrollableContentComponent,
     SerieViewerComponent,
     SerieAssetComponent,
+    PageNotFoundComponent
 
   ],
   imports: [

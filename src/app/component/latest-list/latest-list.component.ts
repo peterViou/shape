@@ -20,7 +20,7 @@ export class ScrollableContentComponent implements OnInit {
   };
 
   private _fetchedSeries: ISerie[] = null;
-  private hasBeenFormated:boolean = false;
+  private _hasBeenFormated: boolean = false;
   private _currentSerie: ISerie = null;
   private _cacheInitLength: number = 10; // should depend of the window widths
   private _cacheMoreLength: number = 4; // should depend of the window widths
@@ -31,25 +31,28 @@ export class ScrollableContentComponent implements OnInit {
   constructor(private _dataService: DataService,
               private _route: ActivatedRoute,
               private _router: Router) {
-    console.log(">>> Creating ScrollableContentComponent")
+    console.log(">>> Creating LATEST LIST")
   }
 
   ngOnInit() {
     // Fetch the data only the first time
-    if (!this._fetchedSeries) {
+    if (!this._hasBeenFormated) {
       console.log(">>> Fetching Data")
       this._dataService.getData()
         .do(series =>
           this.displayedSeries = series
             .slice(0, this._cacheInitLength))
-        // .finally(this.handleComplete)
         .subscribe(series =>
           this._fetchedSeries = this.formatData(series));
+    }
+    else{
+      console.log("do nothing");
     }
   }
 
   formatData(mySeries: ISerie[]): ISerie[] {
-    if(!this.hasBeenFormated){
+    if (!this._hasBeenFormated) {
+      this._hasBeenFormated = true;
       mySeries
         .map(result => {
           // result.title =result.title;
