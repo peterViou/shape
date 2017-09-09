@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
-import {DataService} from "../latest-list/data.service";
+import {DataService} from "../datas/data.service";
 import {Lightbox} from 'angular2-lightbox';
-import {IAsset} from "../latest-list/iasset";
+import {IAsset} from "../datas/iasset";
 
 export interface IAlbum {
   src: string;
@@ -11,11 +11,12 @@ export interface IAlbum {
 }
 
 @Component({
-  selector: 'app-asset-list',
-  templateUrl: './asset-list.component.html',
-  styleUrls: ['./asset-list.component.scss']
+  selector: 'app-serie',
+  templateUrl: './serie.component.html',
+  styleUrls: ['./serie.component.scss']
 })
-export class SerieViewerComponent implements OnInit {
+
+export class SerieComponent implements OnInit {
 
   public displayedAssets: IAsset[];
   public displayedAlbum: IAlbum[];

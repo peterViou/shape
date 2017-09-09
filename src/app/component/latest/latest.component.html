@@ -11,7 +11,7 @@
     [options]="myOptions"
     (layoutComplete)="masonryRedraw()"
   >
-        <app-asset
+        <app-latest-asset
           masonry-brick
           class="serie"
           *ngFor="let serie of displayedSeries ; let i = index"
@@ -19,7 +19,7 @@
           [serie]="serie"
 
         >
-        </app-asset>
+        </app-latest-asset>
 
   </masonry>
 </div>

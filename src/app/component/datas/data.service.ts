@@ -15,9 +15,25 @@ export class DataService {
   constructor(private http: Http) {
   }
 
-  serieToDisplay:ISerie;
+  serieToDisplay: ISerie;
 
-  getData(): Observable<ISerie[]> {
+  public formatData(mySeries: ISerie[]): ISerie[] {
+
+    mySeries
+      .map(result => {
+        // result.title =result.title;
+        result.assets.forEach(asset => {
+          asset.thumbnail = "http://www.shape-production.fr/photos/" + asset.thumbnail;
+        })
+
+        return result;
+      });
+
+    console.log("FORMAT DATA ", mySeries);
+    return mySeries
+  }
+
+  public getData(): Observable<ISerie[]> {
     if (this._data) {
       // if `data` is available just return it as `Observable`
       return Observable.of(this._data);

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalAssetComponent } from './modal-asset.component';
+import { LatestComponent } from './latest.component';
 
-describe('ModalAssetComponent', () => {
-  let component: ModalAssetComponent;
-  let fixture: ComponentFixture<ModalAssetComponent>;
+describe('LatestComponent', () => {
+  let component: LatestComponent;
+  let fixture: ComponentFixture<LatestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalAssetComponent ]
+      declarations: [ LatestComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalAssetComponent);
+    fixture = TestBed.createComponent(LatestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

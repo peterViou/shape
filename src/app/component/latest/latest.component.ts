@@ -1,15 +1,15 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
-import {DataService} from "./data.service";
-import {ISerie} from "./iserie";
+import {DataService} from "../datas/data.service";
+import {ISerie} from "../datas/iserie";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-latest-list',
-  templateUrl: './latest-list.component.html',
-  styleUrls: ['./latest-list.component.scss'],
+  selector: 'app-latest',
+  templateUrl: './latest.component.html',
+  styleUrls: ['./latest.component.scss'],
 })
-export class ScrollableContentComponent implements OnInit {
+export class LatestComponent implements OnInit {
 
   public displayedSeries: ISerie[];
   public myOptions: MasonryOptions = {
@@ -19,8 +19,10 @@ export class ScrollableContentComponent implements OnInit {
     fitWidth: true,
   };
 
+  private _peter: ISerie[];
+
   private _fetchedSeries: ISerie[] = null;
-  private _hasBeenFormated: boolean = false;
+  private _hasBeenFormated: boolean;
   private _currentSerie: ISerie = null;
   private _cacheInitLength: number = 10; // should depend of the window widths
   private _cacheMoreLength: number = 4; // should depend of the window widths
@@ -35,36 +37,22 @@ export class ScrollableContentComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('_hasBeenFormated : ', this._hasBeenFormated);
     // Fetch the data only the first time
     if (!this._hasBeenFormated) {
-      console.log(">>> Fetching Data")
+      this._hasBeenFormated = true;
+      console.log('_hasBeenFormated : ', this._hasBeenFormated);
+      console.log(">>> Fetching Data from LATEST")
       this._dataService.getData()
         .do(series =>
           this.displayedSeries = series
             .slice(0, this._cacheInitLength))
         .subscribe(series =>
-          this._fetchedSeries = this.formatData(series));
+          this._fetchedSeries = this._dataService.formatData(series));
     }
-    else{
+    else {
       console.log("do nothing");
     }
-  }
-
-  formatData(mySeries: ISerie[]): ISerie[] {
-    if (!this._hasBeenFormated) {
-      this._hasBeenFormated = true;
-      mySeries
-        .map(result => {
-          // result.title =result.title;
-          result.assets.forEach(asset => {
-            asset.thumbnail = "http://www.shape-production.fr/photos/" + asset.thumbnail;
-          })
-
-          return result;
-        });
-    }
-    console.log("FORMAT DATA ahahahaha", mySeries);
-    return mySeries
   }
 
   public onScroll(): void {

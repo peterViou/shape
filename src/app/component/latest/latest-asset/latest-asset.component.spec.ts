@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrollableContentComponent } from './latest-list.component';
+import { LatestAsset } from './latest-asset.component';
 
-describe('ScrollableContentComponent', () => {
-  let component: ScrollableContentComponent;
-  let fixture: ComponentFixture<ScrollableContentComponent>;
+describe('LatestAsset', () => {
+  let component: LatestAsset;
+  let fixture: ComponentFixture<LatestAsset>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScrollableContentComponent ]
+      declarations: [ LatestAsset ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ScrollableContentComponent);
+    fixture = TestBed.createComponent(LatestAsset);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

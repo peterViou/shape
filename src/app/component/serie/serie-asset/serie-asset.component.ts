@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAsset} from "../../latest-list/iasset";
+import {IAsset} from "../../datas/iasset";
 
 @Component({
   selector: 'app-serie-asset',

@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ISerie} from "../iserie";
-import {IAsset} from "../iasset";
+import {ISerie} from "../../datas/iserie";
+import {IAsset} from "../../datas/iasset";
 
 @Component({
-  selector: 'app-asset',
-  templateUrl: './asset.component.html',
-  styleUrls: ['./asset.component.scss']
+  selector: 'app-latest-asset',
+  templateUrl: './latest-asset.component.html',
+  styleUrls: ['./latest-asset.component.scss']
 })
-export class Asset implements OnInit {
+export class LatestAsset implements OnInit {
   @Input() serie: ISerie;
   public firstItem: IAsset;
   _isLoaded: boolean;
