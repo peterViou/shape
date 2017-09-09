@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
-import {DataService} from "../datas/data.service";
 import {Lightbox} from 'angular2-lightbox';
 import {IAsset} from "../datas/iasset";
 import {SimpleDataService} from "../datas/simple-data.service";
+import {ActivatedRoute} from "@angular/router";
 
 export interface IAlbum {
   src: string;
@@ -18,6 +18,8 @@ export interface IAlbum {
 })
 
 export class SerieComponent implements OnInit {
+  id: number;
+  private _sub: any;
 
   public displayedAssets: IAsset[];
   public displayedAlbum: IAlbum[];
@@ -30,24 +32,38 @@ export class SerieComponent implements OnInit {
 
   @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
-  constructor(private _simpleData: SimpleDataService, private _lightbox: Lightbox) {
+  constructor(private _simpleData: SimpleDataService,
+              private _lightbox: Lightbox,
+              private _route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    const serieToDisplay = this._simpleData.serieToDisplay;
-    // console.log("serieToDisplay", serieToDisplay)
+    this._sub = this._route.params.subscribe(params => {
+      this.id = +params['id']; // (+) converts string 'id' to a number
+      console.log("this.id : ", this.id)
+      // In a real app: dispatch action to load the details here.
 
-    this.displayedAssets = serieToDisplay.assets;
-    this.displayedAlbum = this.displayedAssets.map(album => {
-      return {
-        src : album.thumbnail,
-        caption: album.thumbnail,
-        thumb: album.thumbnail
-      }
+      const serieToDisplay = this._simpleData.serieToDisplay;
+      // console.log("serieToDisplay", serieToDisplay)
+
+      this.displayedAssets = serieToDisplay.assets;
+      this.displayedAlbum = this.displayedAssets.map(album => {
+        return {
+          src: album.thumbnail,
+          caption: album.thumbnail,
+          thumb: album.thumbnail
+        }
+      });
     });
+
+
     //TODO nettoyer
     // TODO peut etre faire une methode pour la serie
     // console.log("displayedAlbum : " + this.displayedAlbum[0].src);
+  }
+
+  ngOnDestroy() {
+    this._sub.unsubscribe();
   }
 
 
