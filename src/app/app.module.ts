@@ -26,6 +26,7 @@ const appRoutes: Routes = [
   {path: 'services', component: ServicesComponent},
   {path: 'clients', component: ClientsComponent},
   {path: 'contact', component: ContactComponent},
+  { path: '',   redirectTo: '/latest', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
 
