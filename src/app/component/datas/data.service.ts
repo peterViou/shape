@@ -9,8 +9,12 @@ export class DataService {
   // private url: string = "./assets/data.json";// loremPixel
   // private url: string = "./assets/dataLocal.json";// photos locales
   private jsonURL: string = "./assets/dataShape.json";// photos shape local
-  private _data: ISerie[];
+  public _data: ISerie[];
   private observable: Observable<ISerie[]>;
+
+  public displayedLengthInit : 10 ;
+  public fetchedDatas: ISerie[] = null;
+  public displayedDatas: ISerie[] = null;
 
   constructor(private http: Http) {
   }
@@ -18,7 +22,7 @@ export class DataService {
   serieToDisplay: ISerie;
 
   public formatData(mySeries: ISerie[]): ISerie[] {
-
+    console.log(">>> FORMAT DATA ", mySeries);
     mySeries
       .map(result => {
         // result.title =result.title;
@@ -28,20 +32,23 @@ export class DataService {
 
         return result;
       });
-
-    console.log("FORMAT DATA ", mySeries);
     return mySeries
   }
 
   public getData(): Observable<ISerie[]> {
+    console.log(">>> GET DATA");
+
     if (this._data) {
+      console.log("this._data", this._data);
       // if `data` is available just return it as `Observable`
       return Observable.of(this._data);
     } else if (this.observable) {
+      console.log("this.observable", this.observable);
       // if `this.observable` is set then the request is in progress
       // return the `Observable` for the ongoing request
       return this.observable;
     } else {
+      console.log("premiere fois :)");
       // example header (not necessary)
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');

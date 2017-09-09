@@ -10,13 +10,15 @@ import {InstagramComponent} from './component/instagram/instagram.component';
 import {LatestComponent} from './component/latest/latest.component';
 import {RouterModule, Routes} from "@angular/router";
 import {SerieComponent} from './component/serie/serie.component';
-import {DataService} from "./component/datas/data.service";
+// import {DataService} from "./component/datas/data.service";
 import {LightboxModule} from 'angular2-lightbox';
 import {SerieAssetComponent} from './component/serie/serie-asset/serie-asset.component';
 import {PageNotFoundComponent} from "./component/page-not-found/page-not-found.component";
 import {ServicesComponent} from './component/services/services.component';
 import {ContactComponent} from './component/contact/contact.component';
 import {ClientsComponent} from './component/clients/clients.component';
+import {SimpleDataService} from "app/component/datas/simple-data.service";
+// import {SimpleDataService} from "./component/datas/simple-data.service";
 
 const appRoutes: Routes = [
   {path: 'latest', component: LatestComponent},
@@ -51,8 +53,12 @@ const appRoutes: Routes = [
     JsonpModule,
     LightboxModule
   ],
-  providers: [DataService],
-  bootstrap: [AppComponent]
+  providers: [
+    SimpleDataService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 }

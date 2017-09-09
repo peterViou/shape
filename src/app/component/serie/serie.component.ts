@@ -3,6 +3,7 @@ import {MasonryOptions} from "angular2-masonry";
 import {DataService} from "../datas/data.service";
 import {Lightbox} from 'angular2-lightbox';
 import {IAsset} from "../datas/iasset";
+import {SimpleDataService} from "../datas/simple-data.service";
 
 export interface IAlbum {
   src: string;
@@ -29,12 +30,13 @@ export class SerieComponent implements OnInit {
 
   @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
-  constructor(private _dataService: DataService, private _lightbox: Lightbox) {
-    console.log(">>> Creating SERIE VIEWER")
+  constructor(private _simpleData: SimpleDataService, private _lightbox: Lightbox) {
   }
 
   ngOnInit() {
-    const serieToDisplay = this._dataService.serieToDisplay;
+    const serieToDisplay = this._simpleData.serieToDisplay;
+    // console.log("serieToDisplay", serieToDisplay)
+
     this.displayedAssets = serieToDisplay.assets;
     this.displayedAlbum = this.displayedAssets.map(album => {
       return {
@@ -43,15 +45,15 @@ export class SerieComponent implements OnInit {
         thumb: album.thumbnail
       }
     });
-    console.log("displayedAlbum : " + this.displayedAlbum[0].src);
+    //TODO nettoyer
+    // TODO peut etre faire une methode pour la serie
+    // console.log("displayedAlbum : " + this.displayedAlbum[0].src);
   }
 
 
   public onAssetClick(assetID: number): void {
     console.log("assetID : " + assetID);
-
     this._lightbox.open(this.displayedAlbum, assetID);
-    // TODO
   }
 
   /**

@@ -5,6 +5,7 @@
   [infiniteScrollThrottle]="300"
   (scrolled)="onScroll()"
 >
+  <!--<button (click)="loadData()">Reload</button>-->
   <masonry
     class="centered"
     #myMasonry
@@ -14,12 +15,10 @@
         <app-latest-asset
           masonry-brick
           class="serie"
-          *ngFor="let serie of displayedSeries ; let i = index"
+          *ngFor="let serie of latest ; let i = index"
           (click)="onSerieClick(i)"
           [serie]="serie"
-
         >
         </app-latest-asset>
-
   </masonry>
 </div>

@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
-import {DataService} from "../datas/data.service";
 import {ISerie} from "../datas/iserie";
 import {ActivatedRoute, Router} from "@angular/router";
+import {SimpleDataService} from "../datas/simple-data.service";
 
 @Component({
   selector: 'app-latest',
@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class LatestComponent implements OnInit {
 
   public displayedSeries: ISerie[];
+
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
     resize: true,
@@ -19,51 +20,73 @@ export class LatestComponent implements OnInit {
     fitWidth: true,
   };
 
-  private _peter: ISerie[];
+  latest: ISerie[];
+  subscription;
 
-  private _fetchedSeries: ISerie[] = null;
-  private _hasBeenFormated: boolean;
-  private _currentSerie: ISerie = null;
-  private _cacheInitLength: number = 10; // should depend of the window widths
-  private _cacheMoreLength: number = 4; // should depend of the window widths
-  private _numberOfItemsInCache = this._cacheInitLength;
+  // private _fetchedSeries: ISerie[] = null;
+  // private _hasBeenFormated: boolean;
+  // private _cacheInitLength: number = 10; // should depend of the window widths
+  // private _cacheMoreLength: number = 4; // should depend of the window widths
+  // private _numberOfItemsInCache = this._dataService.displayedLengthInit;
   // _masonryInstance : Variable linked to masonry's component instantiated in the template
   @ViewChild('myMasonry') private _masonryInstance;
 
-  constructor(private _dataService: DataService,
-              private _route: ActivatedRoute,
-              private _router: Router) {
-    console.log(">>> Creating LATEST LIST")
+  constructor(private _route: ActivatedRoute,
+              private _router: Router,
+              private _simpleData: SimpleDataService) {
   }
 
   ngOnInit() {
-    console.log('_hasBeenFormated : ', this._hasBeenFormated);
+    this.loadData();
+//TODO : refaire le buffer de display et activer à nouveau l'infinite Scroll
+
+    // this.displayedSeries = this._dataService.fetchedDatas.slice(0, this._cacheInitLength);
+    // console.log("displayedSeries : ",this._dataService.displayedDatas);
+    // console.log('_hasBeenFormated : ', this._hasBeenFormated);
+// this._dataService.fetchedDatas.do(series =>
+//         this.displayedSeries = series
+//           .slice(0, this._cacheInitLength))
+
+    // console.log('_hasBeenFormated : ', this._hasBeenFormated);
     // Fetch the data only the first time
-    if (!this._hasBeenFormated) {
-      this._hasBeenFormated = true;
-      console.log('_hasBeenFormated : ', this._hasBeenFormated);
-      console.log(">>> Fetching Data from LATEST")
-      this._dataService.getData()
-        .do(series =>
-          this.displayedSeries = series
-            .slice(0, this._cacheInitLength))
-        .subscribe(series =>
-          this._fetchedSeries = this._dataService.formatData(series));
-    }
-    else {
-      console.log("do nothing");
-    }
+    // if (!this._hasBeenFormated) {
+    //   this._hasBeenFormated = true;
+    // console.log('_hasBeenFormated : ', this._hasBeenFormated);
+
+    // this._dataService.getData()
+    //   .do(series =>
+    //     this.displayedSeries = series
+    //       .slice(0, this._cacheInitLength))
+    //   .subscribe(series =>
+    //     this._fetchedSeries = this._dataService.formatData(series));
+    // }
+    // else {
+    //   console.log("do nothing");
+    // }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    console.log('Destroyed');
+  }
+
+  loadData() {
+    this.subscription = this._simpleData
+      .getSeries()
+      .subscribe(res => this.latest = res,
+        error => console.log(error));
   }
 
   public onScroll(): void {
-    const newData = this._fetchedSeries.slice(this._numberOfItemsInCache, this._numberOfItemsInCache + this._cacheMoreLength);
-    this.displayedSeries.splice(this.displayedSeries.length, 0, ...newData);
-    this._numberOfItemsInCache += this._cacheMoreLength;
+    // const newData = this._fetchedSeries.slice(this._numberOfItemsInCache, this._numberOfItemsInCache + this._cacheMoreLength);
+    // this.displayedSeries.splice(this.displayedSeries.length, 0, ...newData);
+    // this._numberOfItemsInCache += this._cacheMoreLength;
   }
 
   public onSerieClick(serieID: number): void {
-    this._dataService.serieToDisplay = this.displayedSeries[serieID];
-    this._router.navigate(["/series/" + this.displayedSeries[serieID].title]);
+    console.log("serieID : ", serieID)
+    this._simpleData.serieToDisplay = this.latest[serieID];
+    this._router.navigate(["/series/" + this.latest[serieID].title]);
   }
 
   /**

@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {DataService} from "./component/datas/data.service";
+import {SimpleDataService} from "./component/datas/simple-data.service";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,9 @@ import {DataService} from "./component/datas/data.service";
 })
 
 export class AppComponent implements OnInit {
-  constructor(private _dataService: DataService) {
+  constructor( private _simpleDataService:SimpleDataService) {
   }
 
   ngOnInit(): void {
-    // console.log(">>> Fetching Data from APP")
-
-    // this._dataService.getData().subscribe(result =>
-    //  let resulte = result;
   }
 }
