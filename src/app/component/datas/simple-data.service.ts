@@ -43,13 +43,15 @@ export class SimpleDataService {
     return this._latest;
   }
 
+  public getSerie(id) {
+    console.log('getSerie', id);
+  }
+
   // public getLatestRange(range) {
   //   console.log('getLatestRange', range);
   // }
   //
-  // public getSerie(id) {
-  //   console.log('getSerie', id);
-  // }
+
   //
   // public getSerieType(id) {
   //   // Single Image

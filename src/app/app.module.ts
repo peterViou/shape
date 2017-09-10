@@ -8,7 +8,6 @@ import {InfiniteScrollModule} from "angular2-infinite-scroll";
 import {HttpModule, JsonpModule} from "@angular/http";
 import {InstagramComponent} from './component/instagram/instagram.component';
 import {LatestComponent} from './component/latest/latest.component';
-import {RouterModule, Routes} from "@angular/router";
 import {SerieComponent} from './component/serie/serie.component';
 import {LightboxModule} from 'angular2-lightbox';
 import {SerieAssetComponent} from './component/serie/serie-asset/serie-asset.component';
@@ -18,6 +17,7 @@ import {ContactComponent} from './component/contact/contact.component';
 import {ClientsComponent} from './component/clients/clients.component';
 import {SimpleDataService} from "app/component/datas/simple-data.service";
 import { AppRoutingModule } from './app-routing.module';
+import { SerieInfoComponent } from './component/serie-info/serie-info.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     PageNotFoundComponent,
     ServicesComponent,
     ContactComponent,
-    ClientsComponent
-
+    ClientsComponent,
+    SerieInfoComponent
   ],
   imports: [
     BrowserModule,

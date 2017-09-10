@@ -3,7 +3,10 @@ import {MasonryOptions} from "angular2-masonry";
 import {Lightbox} from 'angular2-lightbox';
 import {IAsset} from "../datas/iasset";
 import {SimpleDataService} from "../datas/simple-data.service";
-import {ActivatedRoute} from "@angular/router";
+
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+
 
 export interface IAlbum {
   src: string;
@@ -20,6 +23,7 @@ export interface IAlbum {
 export class SerieComponent implements OnInit {
   id: number;
   private _sub: any;
+  private _serieToDisplay;
 
   public displayedAssets: IAsset[];
   public displayedAlbum: IAlbum[];
@@ -34,14 +38,21 @@ export class SerieComponent implements OnInit {
 
   constructor(private _simpleData: SimpleDataService,
               private _lightbox: Lightbox,
-              private _route: ActivatedRoute) {
+              private _route: ActivatedRoute,
+              private _router: Router) {
   }
 
   ngOnInit() {
-    this._sub = this._route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
-      console.log("this.id : ", this.id)
-      // In a real app: dispatch action to load the details here.
+
+    // this._serieToDisplay = this._route.paramMap
+    //   .switchMap((params: ParamMap) =>
+    //     this._simpleData.getSerie(params.get('id')));
+
+
+    // this._sub = this._route.params.subscribe(params => {
+    //   this.id = +params['id']; // (+) converts string 'id' to a number
+    //   console.log("this.id : ", this.id)
+    //   // In a real app: dispatch action to load the details here.
 
       const serieToDisplay = this._simpleData.serieToDisplay;
       // console.log("serieToDisplay", serieToDisplay)
@@ -54,7 +65,9 @@ export class SerieComponent implements OnInit {
           thumb: album.thumbnail
         }
       });
-    });
+
+
+    // });
 
 
     //TODO nettoyer
