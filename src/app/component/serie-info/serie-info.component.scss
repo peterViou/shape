@@ -3,7 +3,7 @@ z-index: 200;
 }
 
 .container {
-  height: 1.2em;
+  height: 2.4em;
   background-color: black;
   position: fixed;
   top: 4.2em;
@@ -11,7 +11,11 @@ z-index: 200;
   z-index: 2000;
 }
 
-.title{
+.title, .artist{
   color:white;
   margin-left:1.2em;
+}
+
+.artist{
+
 }
