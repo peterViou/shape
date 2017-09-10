@@ -75,9 +75,9 @@ export class SerieComponent implements OnInit {
     // console.log("displayedAlbum : " + this.displayedAlbum[0].src);
   }
 
-  ngOnDestroy() {
-    this._sub.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this._sub.unsubscribe();
+  // }
 
 
   public onAssetClick(assetID: number): void {

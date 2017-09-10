@@ -15,8 +15,10 @@ export class SerieInfoComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.currentSerie.title = "Tobias";
     this.currentSerie = this._simpleData.serieToDisplay;
-    console.log("this.currentSerie : ", this.currentSerie)
+    console.log("this.currentSerie : ", this.currentSerie);
+    console.log("this.currentSerie.title : ", this.currentSerie.title);
   }
 
 }
