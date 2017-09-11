@@ -9,6 +9,7 @@ import 'rxjs/Rx';
 export class SimpleDataService {
 
   private _latest: Observable<ISerie[]> = null;
+  public currentSerie:ISerie;
 
   constructor(private _http: Http) {
   }
