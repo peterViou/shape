@@ -8,9 +8,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class SimpleDataService {
 
-  public serieToDisplay: ISerie = null;
-  // public serieToDisplayID: number = null;
-  private _latest: Observable<any> = null;
+  private _latest: Observable<ISerie[]> = null;
 
   constructor(private _http: Http) {
   }
@@ -20,7 +18,6 @@ export class SimpleDataService {
   }
 
   static formatData(mySeries: ISerie[]): ISerie[] {
-    console.log(">>> FORMAT DATA ", mySeries);
     mySeries
       .map(result => {
         result.assets.forEach(asset => {
@@ -31,7 +28,7 @@ export class SimpleDataService {
     return mySeries
   }
 
-  public getSeries() {
+  public getSeries(): Observable<ISerie[]> {
     if (!this._latest) {
       this._latest = this._http.get("./assets/dataShape.json")
         .map((res: Response) => res.json())
@@ -39,31 +36,32 @@ export class SimpleDataService {
         .publishReplay(1)
         .refCount();
     }
-    // console.log("_latest : ",this._latest)
     return this._latest;
   }
 
-  public getSerie(id) {
-    console.log('getSerie', id);
+  public getSerieByID(monID: number): Observable<ISerie> {
+    console.log("getSerieByID : ", monID);
+    return this.getSeries()
+      .map(series =>  series.find(serie => serie.id === monID))
   }
 
-  // public getLatestRange(range) {
-  //   console.log('getLatestRange', range);
-  // }
-  //
+// public getLatestRange(range) {
+//   console.log('getLatestRange', range);
+// }
+//
 
-  //
-  // public getSerieType(id) {
-  //   // Single Image
-  //   // Several Images
-  //   // Single Video
-  //   // Several Images
-  //   // Mix
-  //
-  //   console.log('getSerieType', id);
-  // }
-  //
-  // public getSerieThumbnail(id) {
-  //   console.log('getSerieThumbnail', id);
-  // }
+//
+// public getSerieType(id) {
+//   // Single Image
+//   // Several Images
+//   // Single Video
+//   // Several Images
+//   // Mix
+//
+//   console.log('getSerieType', id);
+// }
+//
+// public getSerieThumbnail(id) {
+//   console.log('getSerieThumbnail', id);
+// }
 }

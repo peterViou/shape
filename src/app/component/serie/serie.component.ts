@@ -4,8 +4,9 @@ import {Lightbox} from 'angular2-lightbox';
 import {IAsset} from "../datas/iasset";
 import {SimpleDataService} from "../datas/simple-data.service";
 
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import {ISerie} from "../datas/iserie";
 
 
 export interface IAlbum {
@@ -21,64 +22,46 @@ export interface IAlbum {
 })
 
 export class SerieComponent implements OnInit {
-  id: number;
-  private _sub: any;
-  private _serieToDisplay;
 
+  private _sub: any;
   public displayedAssets: IAsset[];
   public displayedAlbum: IAlbum[];
+
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
     resize: true,
     hiddenStyle: {opacity: 0},
-    fitWidth: true,
+    fitWidth: true
   };
 
   @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
-  constructor(private _simpleData: SimpleDataService,
-              private _lightbox: Lightbox,
-              private _route: ActivatedRoute,
-              private _router: Router) {
+  constructor(private _route: ActivatedRoute,
+              private _router: Router,
+              private _simpleData: SimpleDataService,
+              private _lightbox: Lightbox) {
   }
 
   ngOnInit() {
-
-    // this._serieToDisplay = this._route.paramMap
-    //   .switchMap((params: ParamMap) =>
-    //     this._simpleData.getSerie(params.get('id')));
-
-
-    // this._sub = this._route.params.subscribe(params => {
-    //   this.id = +params['id']; // (+) converts string 'id' to a number
-    //   console.log("this.id : ", this.id)
-    //   // In a real app: dispatch action to load the details here.
-
-      const serieToDisplay = this._simpleData.serieToDisplay;
-      // console.log("serieToDisplay", serieToDisplay)
-
-      this.displayedAssets = serieToDisplay.assets;
-      this.displayedAlbum = this.displayedAssets.map(album => {
-        return {
-          src: album.thumbnail,
-          caption: album.thumbnail,
-          thumb: album.thumbnail
-        }
-      });
-
-
-    // });
-
-
-    //TODO nettoyer
-    // TODO peut etre faire une methode pour la serie
-    // console.log("displayedAlbum : " + this.displayedAlbum[0].src);
+    this._sub = this._route.paramMap
+      .switchMap((params: ParamMap) => this._simpleData.getSerieByID(+params.get('id')))
+      .subscribe(serie => this.handleComplete(serie));
   }
 
-  // ngOnDestroy() {
-  //   this._sub.unsubscribe();
-  // }
+  private handleComplete(s: ISerie): void {
+    this.displayedAssets = s.assets;
+    this.displayedAlbum = this.displayedAssets.map(serie => {
+      return {
+        src: serie.thumbnail,
+        caption: serie.thumbnail,
+        thumb: serie.thumbnail
+      }
+    });
+  }
 
+  ngOnDestroy() {
+    this._sub.unsubscribe();
+  }
 
   public onAssetClick(assetID: number): void {
     console.log("assetID : " + assetID);

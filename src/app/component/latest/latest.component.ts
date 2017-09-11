@@ -84,9 +84,10 @@ export class LatestComponent implements OnInit {
   }
 
   public onSerieClick(serieID: number): void {
-    console.log("serieID : ", serieID)
-    this._simpleData.serieToDisplay = this.latest[serieID];
-    this._router.navigate(['/series/' + serieID]);
+    console.log("serieID cliqué: ", serieID);
+    console.log("this.latest[serieID].title: ", this.latest[serieID].id)
+    // this._simpleData.serieToDisplay = this.latest[serieID];
+    this._router.navigate(['/series/' + this.latest[serieID].id]);
   }
 
   /**

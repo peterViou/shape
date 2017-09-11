@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   {path: 'services', component: ServicesComponent},
   {path: 'clients', component: ClientsComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'series', redirectTo: '/latest', pathMatch: 'prefix'}, // TODO : hack tout pourri pur contourner le fait qu'on peut pas refresh une serie sans avoir une methode dédie a fetch d'une serie et d'un gestion plus puissante de l'analyse de l'url
+  // {path: 'series', redirectTo: '/latest', pathMatch: 'prefix'}, // TODO : hack tout pourri pur contourner le fait qu'on peut pas refresh une serie sans avoir une methode dédie a fetch d'une serie et d'un gestion plus puissante de l'analyse de l'url
   {path: '', redirectTo: '/latest', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
