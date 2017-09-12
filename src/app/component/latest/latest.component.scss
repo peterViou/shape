@@ -1,6 +1,11 @@
 #main {
-  padding-top: 6em;
+  //padding-top: 6.3em;
   margin: auto;
+  transform: translate(0em, 6.3em);
+  transition: all 0.4s;
+  @media screen and (max-width: 768px) {
+    transform: translate(0em, 4.2em);
+  }
 }
 
 .centered {
