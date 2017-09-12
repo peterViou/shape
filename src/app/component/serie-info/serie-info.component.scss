@@ -1,21 +1,26 @@
-:host{
-z-index: 200;
+:host {
+  z-index: 200;
 }
 
 .container {
+  transition: all 0.4s;
   height: 2.4em;
   background-color: black;
   position: fixed;
   top: 4.2em;
   width: 100%;
-  z-index: 2000;
+  z-index: 99;
+  @media screen and (max-width: 786px) {
+    top: 2.1em;
+  }
 }
 
-.title, .artist{
-  color:white;
-  margin-left:1.2em;
+.title, .artist {
+  color: white;
+  margin-left: 1.2em;
+  top: 2.1em;
 }
 
-.artist{
+.artist {
 
 }

@@ -13,6 +13,9 @@
   transform: translate(152px, 0px);
   transition-duration: 500ms;
   transition-delay: 200ms;
+  @media screen and (max-width: 768px) {
+    transform: translate(200px, 0px);
+  }
 }
 
 .instaTab:hover {
