@@ -10,7 +10,7 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 })
 export class SerieInfoComponent implements OnInit {
 
-  currentSerie: ISerie = null;
+  currentSerie: ISerie;
   private _sub: any;
 
 
