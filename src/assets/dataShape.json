@@ -1,6 +1,6 @@
 [
   {
-    "id":1,
+    "id": 1,
     "title": "La Première des séries",
     "artist": "Thomas Sabo",
     "assets": [
@@ -43,9 +43,9 @@
     ]
   },
   {
-    "id":2,
+    "id": 2,
     "title": "2 - Marie Claire US",
-    "artist": "Emanuele-Fontanesi",
+    "artist": "Emanuele Fontanesi",
     "assets": [
       {
         "thumbnail": "02-Marie_claire_US-01"
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "id":5,
+    "id": 5,
     "title": "5 - Junko Shimada",
     "artist": "",
     "assets": [
@@ -130,297 +130,309 @@
         "thumbnail": "05-Junko_Shimada-16"
       }
     ]
-  }, {
-  "id":6,
-  "title": "6 - Vogue Eyewear Brazil",
-  "artist": "Adriana Lima",
-  "assets": [
-    {
-      "thumbnail": "06-Vogue_Eyewear_Brazil-01"
-    },
-    {
-      "thumbnail": "06-Vogue_Eyewear_Brazil-02"
-    },
-    {
-      "thumbnail": "06-Vogue_Eyewear_Brazil-03"
-    },
-    {
-      "thumbnail": "06-Vogue_Eyewear_Brazil-04"
-    },
-    {
-      "thumbnail": "06-Vogue_Eyewear_Brazil-05"
-    }
-  ]
-}, {
-  "id":7,
-  "title": "7 - G Star",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "07-G_Star-01",
-      "thumbnail2": "www.youtube.com/watch?v=XSGBVzeBUbk"
-    },
-    {
-      "thumbnail": "07-G_Star-02"
-    },
-    {
-      "thumbnail": "07-G_Star-03"
-    },
-    {
-      "thumbnail": "07-G_Star-04"
-    },
-    {
-      "thumbnail": "07-G_Star-05"
-    },
-    {
-      "thumbnail": "07-G_Star-06"
-    },
-    {
-      "thumbnail": "07-G_Star-07"
-    },
-    {
-      "thumbnail": "07-G_Star-08"
-    },
-    {
-      "thumbnail": "07-G_Star-09"
-    },
-    {
-      "thumbnail": "07-G_Star-10"
-    },
-    {
-      "thumbnail": "07-G_Star-11"
-    },
-    {
-      "thumbnail": "07-G_Star-12"
-    },
-    {
-      "thumbnail": "07-G_Star-13"
-    },
-    {
-      "thumbnail": "07-G_Star-14"
-    },
-    {
-      "thumbnail": "07-G_Star-15"
-    },
-    {
-      "thumbnail": "07-G_Star-16"
-    }
-  ]
-}, {
-  "id":8,
-  "title": "8 - Edition 10",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "08-Edition_10-01"
-    },
-    {
-      "thumbnail": "08-Edition_10-02"
-    },
-    {
-      "thumbnail": "08-Edition_10-03"
-    },
-    {
-      "thumbnail": "08-Edition_10-04"
-    },
-    {
-      "thumbnail": "08-Edition_10-05"
-    },
-    {
-      "thumbnail": "08-Edition_10-06"
-    },
-    {
-      "thumbnail": "08-Edition_10-07"
-    }
-  ]
-},{
-  "id":9,
-  "title": "9 - Joie",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "09-Joie-01"
-    },
-    {
-      "thumbnail": "09-Joie-02"
-    }
-  ]
-},{
-  "id":10,
-  "title": "10 - Current",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "10-Current-01"
-    },
-    {
-      "thumbnail": "10-Current-02"
-    },
-    {
-      "thumbnail": "10-Current-03"
-    },
-    {
-      "thumbnail": "10-Current-04"
-    },
-    {
-      "thumbnail": "10-Current-05"
-    },
-    {
-      "thumbnail": "10-Current-06"
-    },
-    {
-      "thumbnail": "10-Current-07"
-    }
-  ]
-},{
-  "id":11,
-  "title": "11 - Vogue Eyewear India",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "11-Vogue_Eyewear_India-01"
-    },
-    {
-      "thumbnail": "11-Vogue_Eyewear_India-02"
-    },
-    {
-      "thumbnail": "11-Vogue_Eyewear_India-03"
-    },
-    {
-      "thumbnail": "11-Vogue_Eyewear_India-04"
-    },
-    {
-      "thumbnail": "11-Vogue_Eyewear_India-05"
-    },
-    {
-      "thumbnail": "11-Vogue_Eyewear_India-06"
-    }
-  ]
-},{
-  "id":13,
-  "title": "13 - Vogue India",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "13-Vogue_India-01"
-    },
-    {
-      "thumbnail": "13-Vogue_India-02"
-    }
-  ]
-},{
-  "id":14,
-  "title": "14 - Vogue Eyewear Thailand",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "14-Vogue_Eyewear_Thailand-01"
-    },
-    {
-      "thumbnail": "14-Vogue_Eyewear_Thailand-02"
-    },
-    {
-      "thumbnail": "14-Vogue_Eyewear_Thailand-03"
-    },
-    {
-      "thumbnail": "14-Vogue_Eyewear_Thailand-04"
-    },
-    {
-      "thumbnail": "14-Vogue_Eyewear_Thailand-05"
-    },
-    {
-      "thumbnail": "14-Vogue_Eyewear_Thailand-06"
-    }
-  ]
-},{
-  "id":15,
-  "title": "15 - Blue Illusion",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "15-Blue_Illusion-01"
-    },
-    {
-      "thumbnail": "15-Blue_Illusion-02"
-    }
-  ]
-},{
-  "id":16,
-  "title": "16 - Pop",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "16-Pop-01"
-    },
-    {
-      "thumbnail": "16-Pop-02"
-    },
-    {
-      "thumbnail": "16-Pop-03"
-    },
-    {
-      "thumbnail": "16-Pop-04"
-    },
-    {
-      "thumbnail": "16-Pop-05"
-    },
-    {
-      "thumbnail": "16-Pop-06"
-    },
-    {
-      "thumbnail": "16-Pop-07"
-    },
-    {
-      "thumbnail": "16-Pop-08"
-    },
-    {
-      "thumbnail": "16-Pop-09"
-    },
-    {
-      "thumbnail": "16-Pop-10"
-    }
-  ]
-},{
-  "id":17,
-  "title": "17 - Another Magazine",
-  "artist": "Charlie Engman",
-  "assets": [
-    {
-      "thumbnail": "17-Another_Magazine_01"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_02"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_03"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_04"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_05"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_06"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_07"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_08"
-    },
-    {
-      "thumbnail": "17-Another_Magazine_09"
-    }
-  ]
-},{
-  "id":18,
-  "title": "18 - Vogue Brazil",
-  "artist": "",
-  "assets": [
-    {
-      "thumbnail": "18-Vogue-Brazil-01"
-    }
-  ]
-}
+  },
+  {
+    "id": 6,
+    "title": "6 - Vogue Eyewear Brazil",
+    "artist": "Adriana Lima",
+    "assets": [
+      {
+        "thumbnail": "06-Vogue_Eyewear_Brazil-01"
+      },
+      {
+        "thumbnail": "06-Vogue_Eyewear_Brazil-02"
+      },
+      {
+        "thumbnail": "06-Vogue_Eyewear_Brazil-03"
+      },
+      {
+        "thumbnail": "06-Vogue_Eyewear_Brazil-04"
+      },
+      {
+        "thumbnail": "06-Vogue_Eyewear_Brazil-05"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "7 - G Star",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "07-G_Star-01",
+        "thumbnail2": "www.youtube.com/watch?v=XSGBVzeBUbk"
+      },
+      {
+        "thumbnail": "07-G_Star-02"
+      },
+      {
+        "thumbnail": "07-G_Star-03"
+      },
+      {
+        "thumbnail": "07-G_Star-04"
+      },
+      {
+        "thumbnail": "07-G_Star-05"
+      },
+      {
+        "thumbnail": "07-G_Star-06"
+      },
+      {
+        "thumbnail": "07-G_Star-07"
+      },
+      {
+        "thumbnail": "07-G_Star-08"
+      },
+      {
+        "thumbnail": "07-G_Star-09"
+      },
+      {
+        "thumbnail": "07-G_Star-10"
+      },
+      {
+        "thumbnail": "07-G_Star-11"
+      },
+      {
+        "thumbnail": "07-G_Star-12"
+      },
+      {
+        "thumbnail": "07-G_Star-13"
+      },
+      {
+        "thumbnail": "07-G_Star-14"
+      },
+      {
+        "thumbnail": "07-G_Star-15"
+      },
+      {
+        "thumbnail": "07-G_Star-16"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "8 - Edition 10",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "08-Edition_10-01"
+      },
+      {
+        "thumbnail": "08-Edition_10-02"
+      },
+      {
+        "thumbnail": "08-Edition_10-03"
+      },
+      {
+        "thumbnail": "08-Edition_10-04"
+      },
+      {
+        "thumbnail": "08-Edition_10-05"
+      },
+      {
+        "thumbnail": "08-Edition_10-06"
+      },
+      {
+        "thumbnail": "08-Edition_10-07"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "9 - Joie",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "09-Joie-01"
+      },
+      {
+        "thumbnail": "09-Joie-02"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "10 - Current",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "10-Current-01"
+      },
+      {
+        "thumbnail": "10-Current-02"
+      },
+      {
+        "thumbnail": "10-Current-03"
+      },
+      {
+        "thumbnail": "10-Current-04"
+      },
+      {
+        "thumbnail": "10-Current-05"
+      },
+      {
+        "thumbnail": "10-Current-06"
+      },
+      {
+        "thumbnail": "10-Current-07"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "11 - Vogue Eyewear India",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "11-Vogue_Eyewear_India-01"
+      },
+      {
+        "thumbnail": "11-Vogue_Eyewear_India-02"
+      },
+      {
+        "thumbnail": "11-Vogue_Eyewear_India-03"
+      },
+      {
+        "thumbnail": "11-Vogue_Eyewear_India-04"
+      },
+      {
+        "thumbnail": "11-Vogue_Eyewear_India-05"
+      },
+      {
+        "thumbnail": "11-Vogue_Eyewear_India-06"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "13 - Vogue India",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "13-Vogue_India-01"
+      },
+      {
+        "thumbnail": "13-Vogue_India-02"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "14 - Vogue Eyewear Thailand",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "14-Vogue_Eyewear_Thailand-01"
+      },
+      {
+        "thumbnail": "14-Vogue_Eyewear_Thailand-02"
+      },
+      {
+        "thumbnail": "14-Vogue_Eyewear_Thailand-03"
+      },
+      {
+        "thumbnail": "14-Vogue_Eyewear_Thailand-04"
+      },
+      {
+        "thumbnail": "14-Vogue_Eyewear_Thailand-05"
+      },
+      {
+        "thumbnail": "14-Vogue_Eyewear_Thailand-06"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "15 - Blue Illusion",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "15-Blue_Illusion-01"
+      },
+      {
+        "thumbnail": "15-Blue_Illusion-02"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "16 - Pop",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "16-Pop-01"
+      },
+      {
+        "thumbnail": "16-Pop-02"
+      },
+      {
+        "thumbnail": "16-Pop-03"
+      },
+      {
+        "thumbnail": "16-Pop-04"
+      },
+      {
+        "thumbnail": "16-Pop-05"
+      },
+      {
+        "thumbnail": "16-Pop-06"
+      },
+      {
+        "thumbnail": "16-Pop-07"
+      },
+      {
+        "thumbnail": "16-Pop-08"
+      },
+      {
+        "thumbnail": "16-Pop-09"
+      },
+      {
+        "thumbnail": "16-Pop-10"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "17 - Another Magazine",
+    "artist": "Charlie Engman",
+    "assets": [
+      {
+        "thumbnail": "17-Another_Magazine_01"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_02"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_03"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_04"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_05"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_06"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_07"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_08"
+      },
+      {
+        "thumbnail": "17-Another_Magazine_09"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "18 - Vogue Brazil",
+    "artist": "",
+    "assets": [
+      {
+        "thumbnail": "18-Vogue-Brazil-01"
+      }
+    ]
+  }
 ]
