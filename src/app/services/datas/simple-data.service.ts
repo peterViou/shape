@@ -22,8 +22,8 @@ export class SimpleDataService {
     mySeries
       .map(result => {
         result.assets.forEach(asset => {
-          asset.big = "http://www.shape-production.fr/big/" + asset.thumbnail;
-          asset.thumbnail = "http://www.shape-production.fr/th/" + asset.thumbnail;
+          asset.big = "http://www.shape-production.fr/big/" + asset.thumbnail + ".jpg";
+          asset.thumbnail = "http://www.shape-production.fr/th/" + asset.thumbnail + ".jpg";
         });
         return result;
       });
