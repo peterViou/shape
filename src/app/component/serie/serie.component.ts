@@ -1,12 +1,12 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
 import {Lightbox} from 'angular2-lightbox';
-import {IAsset} from "../datas/iasset";
-import {SimpleDataService} from "../datas/simple-data.service";
+import {IAsset} from "../../services/datas/iasset";
+import {SimpleDataService} from "../../services/datas/simple-data.service";
 
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import {ISerie} from "../datas/iserie";
+import {ISerie} from "../../services/datas/iserie";
 
 
 export interface IAlbum {
@@ -52,8 +52,8 @@ export class SerieComponent implements OnInit {
     this.displayedAssets = s.assets;
     this.displayedAlbum = this.displayedAssets.map(serie => {
       return {
-        src: serie.thumbnail,
-        caption: serie.thumbnail,
+        src: serie.big,
+        caption: "",
         thumb: serie.thumbnail
       }
     });

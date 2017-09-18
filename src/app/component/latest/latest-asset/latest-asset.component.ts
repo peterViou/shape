@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ISerie} from "../../datas/iserie";
-import {IAsset} from "../../datas/iasset";
+import {ISerie} from "../../../services/datas/iserie";
+import {IAsset} from "../../../services/datas/iasset";
 
 @Component({
   selector: 'app-latest-asset',

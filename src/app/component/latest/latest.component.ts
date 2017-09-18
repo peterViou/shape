@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
 import {MasonryOptions} from "angular2-masonry";
-import {ISerie} from "../datas/iserie";
+import {ISerie} from "../../services/datas/iserie";
 import {ActivatedRoute, Router} from "@angular/router";
-import {SimpleDataService} from "../datas/simple-data.service";
+import {SimpleDataService} from "../../services/datas/simple-data.service";
 
 @Component({
   selector: 'app-latest',

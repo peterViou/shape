@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ISerie} from "../datas/iserie";
-import {SimpleDataService} from "../datas/simple-data.service";
+import {ISerie} from "../../services/datas/iserie";
+import {SimpleDataService} from "../../services/datas/simple-data.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({

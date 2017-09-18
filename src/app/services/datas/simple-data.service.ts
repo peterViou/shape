@@ -9,7 +9,7 @@ import 'rxjs/Rx';
 export class SimpleDataService {
 
   private _latest: Observable<ISerie[]> = null;
-  public currentSerie:ISerie;
+  public currentSerie: ISerie;
 
   constructor(private _http: Http) {
   }
@@ -22,7 +22,8 @@ export class SimpleDataService {
     mySeries
       .map(result => {
         result.assets.forEach(asset => {
-          asset.thumbnail = "http://www.shape-production.fr/photos/" + asset.thumbnail;
+          asset.big = "http://www.shape-production.fr/big/" + asset.thumbnail;
+          asset.thumbnail = "http://www.shape-production.fr/th/" + asset.thumbnail;
         });
         return result;
       });
@@ -43,7 +44,7 @@ export class SimpleDataService {
   public getSerieByID(monID: number): Observable<ISerie> {
     console.log("getSerieByID : ", monID);
     return this.getSeries()
-      .map(series =>  series.find(serie => serie.id === monID))
+      .map(series => series.find(serie => serie.id === monID))
   }
 
 // public getLatestRange(range) {

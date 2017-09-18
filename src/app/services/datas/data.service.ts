@@ -28,7 +28,7 @@ export class DataService {
         // result.title =result.title;
         result.assets.forEach(asset => {
           asset.thumbnail = "http://www.shape-production.fr/photos/" + asset.thumbnail;
-        })
+        });
 
         return result;
       });
