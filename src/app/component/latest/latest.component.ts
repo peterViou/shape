@@ -3,8 +3,8 @@ import {MasonryOptions} from "angular2-masonry";
 import {ISerie} from "../../services/datas/iserie";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SimpleDataService} from "../../services/datas/simple-data.service";
-import {IAlbum} from "../serie/serie.component";
 import {Lightbox} from 'angular2-lightbox';
+import {IAlbum} from "../../services/datas/ialbum";
 
 
 @Component({
@@ -124,11 +124,7 @@ export class LatestComponent implements OnInit {
 
 
     }
-
-
-
-
-
+  
   /**
    * Force the redraw of Masonry
    */

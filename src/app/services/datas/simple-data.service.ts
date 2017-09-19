@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/publishReplay';
 import {ISerie} from "./iserie";
 import 'rxjs/Rx';
-import {IAlbum} from "../../component/serie/serie.component";
+import {IAlbum} from "./ialbum";
 
 @Injectable()
 export class SimpleDataService {
@@ -48,7 +48,7 @@ export class SimpleDataService {
       .map(series => series.find(serie => serie.id === monID))
   }
 
-  public getLightBoxAlbumFromSerie(s:ISerie) :IAlbum[]{
+  public getLightBoxAlbumFromSerie(s: ISerie): IAlbum[] {
     return s.assets.map(serie => {
       return {
         src: serie.big,
