@@ -15,7 +15,7 @@ export class SimpleDataService {
   constructor(private _http: Http) {
   }
 
-  clearCache() {
+  public clearCache() {
     this._latest = null;
   }
 
@@ -48,17 +48,6 @@ export class SimpleDataService {
       .map(series => series.find(serie => serie.id === monID))
   }
 
-// public getLatestRange(range) {
-//   console.log('getLatestRange', range);
-// }
-//
-
-
-  public isSerieSingle(s: ISerie): boolean {
-    console.log('isSerieSingle', s.id + " " + s.title + " " + s.artist);
-    return (s.assets.length > 1)
-  }
-
   public getLightBoxAlbumFromSerie(s:ISerie) :IAlbum[]{
     return s.assets.map(serie => {
       return {
@@ -69,8 +58,4 @@ export class SimpleDataService {
     });
   }
 
-//
-// public getSerieThumbnail(id) {
-//   console.log('getSerieThumbnail', id);
-// }
 }

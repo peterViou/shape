@@ -23,7 +23,7 @@ export interface IAlbum {
 
 export class SerieComponent implements OnInit {
 
-  private _sub: any;
+  // private _sub: any;
   public currentSerie: ISerie;
   public displayedAssets: IAsset[];
 
@@ -42,7 +42,7 @@ export class SerieComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._sub = this._route.paramMap
+    this._route.paramMap
       .switchMap((params: ParamMap) => this._simpleData.getSerieByID(+params.get('id')))
       .first()
       .subscribe(serie => this.handleInitComplete(serie));
