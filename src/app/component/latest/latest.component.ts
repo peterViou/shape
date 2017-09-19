@@ -42,8 +42,10 @@ export class LatestComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadData();
-//TODO : refaire le buffer de display et activer à nouveau l'infinite Scroll
+    this.subscription = this._simpleData
+      .getSeries()
+      .subscribe(res => this.latest = res,
+        error => console.log(error));
 
     // this.displayedSeries = this._dataService.fetchedDatas.slice(0, this._cacheInitLength);
     // console.log("displayedSeries : ",this._dataService.displayedDatas);
@@ -75,14 +77,8 @@ export class LatestComponent implements OnInit {
     console.log('Destroyed');
   }
 
-  loadData() {
-    this.subscription = this._simpleData
-      .getSeries()
-      .subscribe(res => this.latest = res,
-        error => console.log(error));
-  }
-
   public onScroll(): void {
+    //TODO : refaire le buffer de display et activer à nouveau l'infinite Scroll
     // const newData = this._fetchedSeries.slice(this._numberOfItemsInCache, this._numberOfItemsInCache + this._cacheMoreLength);
     // this.displayedSeries.splice(this.displayedSeries.length, 0, ...newData);
     // this._numberOfItemsInCache += this._cacheMoreLength;
@@ -122,9 +118,8 @@ export class LatestComponent implements OnInit {
     // console.log("Il n'y a qu'un asset")
     // this._lightbox.open(this.displayedAlbum, 0);
 
-
     }
-  
+
   /**
    * Force the redraw of Masonry
    */
