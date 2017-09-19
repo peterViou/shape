@@ -30,13 +30,6 @@ export class SerieComponent implements OnInit {
 
   ngOnInit() {
     this.myOptions = this._simpleData.masonryOptions;
-    //   {
-    //   transitionDuration: '0s',
-    //   resize: true,
-    //   hiddenStyle: {opacity: 0},
-    //   fitWidth: true
-    // };
-
     this._route.paramMap
       .switchMap((params: ParamMap) => this._simpleData.getSerieByID(+params.get('id')))
       .first()
