@@ -17,12 +17,7 @@ export class LatestComponent implements OnInit {
   public displayedSeries: ISerie[];
   public displayedAlbum: IAlbum[];
 
-  public myOptions: MasonryOptions = {
-    transitionDuration: '0s',
-    resize: true,
-    hiddenStyle: {opacity: 0},
-    fitWidth: true,
-  };
+  public myOptions: MasonryOptions ;
 
   latest: ISerie[];
   subscription;
@@ -42,6 +37,7 @@ export class LatestComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.myOptions = this._simpleData.masonryOptions;
     this.subscription = this._simpleData
       .getSeries()
       .subscribe(res => this.latest = res,

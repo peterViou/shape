@@ -5,12 +5,19 @@ import 'rxjs/add/operator/publishReplay';
 import {ISerie} from "./iserie";
 import 'rxjs/Rx';
 import {IAlbum} from "./ialbum";
+import {MasonryOptions} from "angular2-masonry";
 
 @Injectable()
 export class SimpleDataService {
 
   private _latest: Observable<ISerie[]> = null;
   public currentSerie: ISerie;
+  public masonryOptions: MasonryOptions = {
+    transitionDuration: '0s',
+    resize: true,
+    hiddenStyle: {opacity: 0},
+    fitWidth: true,
+  };
 
   constructor(private _http: Http) {
   }
