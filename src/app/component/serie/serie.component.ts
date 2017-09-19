@@ -26,7 +26,6 @@ export class SerieComponent implements OnInit {
   private _sub: any;
   public currentSerie: ISerie;
   public displayedAssets: IAsset[];
-  public displayedAlbum: IAlbum[];
 
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
@@ -46,24 +45,16 @@ export class SerieComponent implements OnInit {
     this._sub = this._route.paramMap
       .switchMap((params: ParamMap) => this._simpleData.getSerieByID(+params.get('id')))
       .first()
-      .subscribe(serie => this.handleComplete(serie));
+      .subscribe(serie => this.handleInitComplete(serie));
   }
 
-  private handleComplete(s: ISerie): void {
+  private handleInitComplete(s: ISerie): void {
     this.currentSerie = s;
     this.displayedAssets = s.assets;
-    this.displayedAlbum = this.displayedAssets.map(serie => {
-      return {
-        src: serie.big,
-        caption: "",
-        thumb: serie.thumbnail
-      }
-    });
   }
 
   public onAssetClick(assetID: number): void {
-    console.log("assetID : " + assetID);
-    this._lightbox.open(this.displayedAlbum, assetID);
+    this._lightbox.open(this._simpleData.getLightBoxAlbumFromSerie(this.currentSerie), assetID);
   }
 
   /**

@@ -3,6 +3,9 @@ import {MasonryOptions} from "angular2-masonry";
 import {ISerie} from "../../services/datas/iserie";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SimpleDataService} from "../../services/datas/simple-data.service";
+import {IAlbum} from "../serie/serie.component";
+import {Lightbox} from 'angular2-lightbox';
+
 
 @Component({
   selector: 'app-latest',
@@ -12,6 +15,7 @@ import {SimpleDataService} from "../../services/datas/simple-data.service";
 export class LatestComponent implements OnInit {
 
   public displayedSeries: ISerie[];
+  public displayedAlbum: IAlbum[];
 
   public myOptions: MasonryOptions = {
     transitionDuration: '0s',
@@ -33,7 +37,8 @@ export class LatestComponent implements OnInit {
 
   constructor(private _route: ActivatedRoute,
               private _router: Router,
-              private _simpleData: SimpleDataService) {
+              private _simpleData: SimpleDataService,
+              private _lightbox: Lightbox) {
   }
 
   ngOnInit() {
@@ -85,10 +90,44 @@ export class LatestComponent implements OnInit {
 
   public onSerieClick(serieID: number): void {
     console.log("serieID cliqué: ", serieID);
-    console.log("this.latest[serieID].title: ", this.latest[serieID].id)
     this._simpleData.currentSerie = this.latest[serieID];
-    this._router.navigate(['/series/' + this.latest[serieID].id]);
-  }
+    // console.log("this.latest[serieID].title: ", this.latest[serieID].id)
+      this._router.navigate(['/series/' + this.latest[serieID].id]);
+
+
+    // if (this.latest[serieID].assets.length > 1) {
+    //   this._router.navigate(['/series/' + this.latest[serieID].id]);
+    // }
+    // else {
+    //   this.displayedAlbum = this.latest[serieID].assets.map(serie => {
+    //     return {
+    //       src: serie.big,
+    //       caption: "",
+    //       thumb: serie.thumbnail
+    //     }
+    //   });
+
+
+      // console.log("Il n'y a qu'un asset")
+      // this._lightbox.open(this.displayedAlbum, 0);
+      //todo : débuguer removechild de masonry ???
+
+    // this.displayedAlbum = this.latest[serieID].assets.map(serie => {
+    //   return {
+    //     src: serie.big,
+    //     caption: "",
+    //     thumb: serie.thumbnail
+    //   }
+    // });
+    // console.log("Il n'y a qu'un asset")
+    // this._lightbox.open(this.displayedAlbum, 0);
+
+
+    }
+
+
+
+
 
   /**
    * Force the redraw of Masonry

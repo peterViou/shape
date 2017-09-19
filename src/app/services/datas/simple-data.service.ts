@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/publishReplay';
 import {ISerie} from "./iserie";
 import 'rxjs/Rx';
+import {IAlbum} from "../../component/serie/serie.component";
 
 @Injectable()
 export class SimpleDataService {
@@ -52,16 +53,22 @@ export class SimpleDataService {
 // }
 //
 
-//
-// public getSerieType(id) {
-//   // Single Image
-//   // Several Images
-//   // Single Video
-//   // Several Images
-//   // Mix
-//
-//   console.log('getSerieType', id);
-// }
+
+  public isSerieSingle(s: ISerie): boolean {
+    console.log('isSerieSingle', s.id + " " + s.title + " " + s.artist);
+    return (s.assets.length > 1)
+  }
+
+  public getLightBoxAlbumFromSerie(s:ISerie) :IAlbum[]{
+    return s.assets.map(serie => {
+      return {
+        src: serie.big,
+        caption: "",
+        thumb: serie.thumbnail
+      }
+    });
+  }
+
 //
 // public getSerieThumbnail(id) {
 //   console.log('getSerieThumbnail', id);
