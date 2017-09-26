@@ -1,8 +1,9 @@
 <div class="front" [class.init]="ngOnInit()">
   <a id="logo" routerLink="/latest" routerLinkActive="active"></a>
-  <nav class="nav-screen">
-    <ul>
-      <li class="menuItem"><a class="menuItemLink current" routerLink="/latest" routerLinkActive="active" >Latest</a></li>
+  <nav class="nav">
+    <img id="hamburger" src="assets/img/menu.svg" alt="menu"/>
+    <ul class="clearfix">
+      <li class="menuItem"><a class="menuItemLink" routerLink="/latest" routerLinkActive="active" >Latest</a></li>
       <li class="menuItem">//</li>
       <li class="menuItem"><a class="menuItemLink" routerLink="/services" routerLinkActive="active" >Services</a></li>
       <li class="menuItem">//</li>
