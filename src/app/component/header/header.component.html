@@ -1,15 +1,24 @@
-<div class="front" [class.init]="ngOnInit()">
-  <a id="logo" routerLink="/latest" routerLinkActive="active"></a>
-  <nav class="nav">
-    <img id="hamburger" src="assets/img/menu.svg" alt="menu"/>
-    <ul class="clearfix">
-      <li class="menuItem"><a class="menuItemLink" routerLink="/latest" routerLinkActive="active" >Latest</a></li>
-      <li class="menuItem">//</li>
-      <li class="menuItem"><a class="menuItemLink" routerLink="/services" routerLinkActive="active" >Services</a></li>
-      <li class="menuItem">//</li>
-      <li class="menuItem"><a class="menuItemLink" routerLink="/clients" routerLinkActive="active" >Clients</a></li>
-      <li class="menuItem">//</li>
-      <li class="menuItem"><a class="menuItemLink" routerLink="/contact" routerLinkActive="active" >Contact</a></li>
+<nav class="navBar" [class.navBar-checked]="isHotdogOpened" [class.init]="ngOnInit()">
+  <div class="content">
+    <div class="header">
+      <a id="logo" routerLink="/latest" routerLinkActive="active"></a>
+      <div class="hotdog" (click)="toggleHotdog()" [class.hotdogChecked]="isHotdogOpened">
+        <div class="bread bread-top " [class.bread-top-checked]="isHotdogOpened">
+          <div class="crust crust-top" [class.crust-top-checked]="isHotdogOpened"></div>
+        </div>
+        <div class="bread bread-bottom" [class.bread-bottom-checked]="isHotdogOpened">
+          <div class="crust crust-bottom" [class.crust-bottom-checked]="isHotdogOpened"></div>
+        </div>
+      </div>
+    </div>
+    <ul class="menu" [class.menuChecked]="isHotdogOpened">
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/latest" routerLinkActive="active">Latest</a></li>
+      <!--<li class="menuItem" [class.menu-item-checked]="isHotdogOpened">//</li>-->
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/services" routerLinkActive="active">Services</a></li>
+      <!--<li class="menuItem" [class.menu-item-checked]="isHotdogOpened">//</li>-->
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/clients" routerLinkActive="active">Clients</a></li>
+      <!--<li class="menuItem" [class.menu-item-checked]="isHotdogOpened">//</li>-->
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
-  </nav>
-</div>
+  </div>
+</nav>
