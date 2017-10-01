@@ -7,17 +7,32 @@
   height: 2.4em;
   background-color: black;
   position: fixed;
-  top: 4.2em;
+  top: 44px;
   width: 100%;
+
   z-index: 99;
   @media screen and (max-width: 768px) {
-    top: 2.1em;
+    top: 48px;
+  }
+}
+
+.content{
+  width: 320px;
+  max-width: 980px;
+  margin: 0 auto;
+position: relative;
+  background-color: black;
+  @media screen and (min-width: 690px) {
+    width: 660px;
+  }
+  @media screen and (min-width:1030px) {
+    width: 1000px;
   }
 }
 
 .title, .artist {
   color: white;
-  margin-left: 1.2em;
+  //margin-left: 1.2em;
   top: 2.1em;
 }
 

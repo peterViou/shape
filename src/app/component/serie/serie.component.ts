@@ -3,7 +3,7 @@ import {MasonryOptions} from "angular2-masonry";
 import {Lightbox} from 'angular2-lightbox';
 import {IAsset} from "../../services/datas/iasset";
 import {SimpleDataService} from "../../services/datas/simple-data.service";
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import {ISerie} from "../../services/datas/iserie";
 
@@ -20,6 +20,7 @@ export class SerieComponent implements OnInit {
   public currentSerie: ISerie;
   public displayedAssets: IAsset[];
   public myOptions: MasonryOptions;
+  public LBOptions: Object = {};
 
   @ViewChild('myMasonry2') private _masonryInstance; // _masonryInstance : Variable linked to masonry's component instantiated in the template
 
@@ -29,6 +30,17 @@ export class SerieComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.LBOptions = {
+      'fadeDuration': 0.6,
+      'resizeDuration': 0.6,
+      'fitImageInViewPort': true,
+      'positionFromTop': 0,
+      'showImageNumberLabel': false,
+      'alwaysShowNavOnTouchDevices': false,
+      'wrapAround': false,
+      'disableKeyboardNav': false,
+      'disableScrolling': true
+    };
     this.myOptions = this._simpleData.masonryOptions;
     this._route.paramMap
       .switchMap((params: ParamMap) => this._simpleData.getSerieByID(+params.get('id')))
@@ -42,7 +54,8 @@ export class SerieComponent implements OnInit {
   }
 
   public onAssetClick(assetID: number): void {
-    this._lightbox.open(this._simpleData.getLightBoxAlbumFromSerie(this.currentSerie), assetID);
+
+    this._lightbox.open(this._simpleData.getLightBoxAlbumFromSerie(this.currentSerie), assetID, this.LBOptions);
   }
 
   /**

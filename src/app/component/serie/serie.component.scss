@@ -1,9 +1,9 @@
 #main {
   margin: auto;
-  transform: translate(0em, 7.2em);
+  transform: translate(0em, 5.7em);
   transition: all 0.4s;
   @media screen and (max-width: 768px) {
-    transform: translate(0em, 5.1em);
+    transform: translate(0em, 86px);
   }
   @media screen and (max-width: 650px) {
     //transform: translate(0em, 4.2em);

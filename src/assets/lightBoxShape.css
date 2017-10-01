@@ -1,6 +1,6 @@
 /* Preload images */
 body:after {
-  content: url(img/close.png) url(img/loading.gif) url(img/prev.png) url(img/next.png);
+  content: url(img/close.png) url(img/loader.svg) url(img/prev.png) url(img/next.png);
   display: none;
 }
 
@@ -21,7 +21,7 @@ body.lb-disable-scrolling {
 .lightbox {
   /*position: absolute;*/
   position: fixed;
-  top:0;
+  top:0 !important;
   left: 0;
   width: 100%;
   z-index: 10000;
@@ -54,7 +54,7 @@ body.lb-disable-scrolling {
 
   /* Background color behind image.
      This is visible during transitions. */
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .lb-outerContainer:after {
@@ -78,7 +78,7 @@ body.lb-disable-scrolling {
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  background: url(img/loading.gif) no-repeat;
+  background: url(img/loader.svg) no-repeat;
 }
 
 .lb-nav {
