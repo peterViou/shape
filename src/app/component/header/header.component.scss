@@ -260,6 +260,20 @@ $lg: 1200px;
   }
 }
 
+.instaLogo {
+  height: 32px;
+  margin-top: 6px;
+}
+
+.follow {
+  display: inline-block;
+  /* line-height: 44px; */
+  margin-left: 8px;
+  vertical-align: top;
+}
+
+
+
 .menuItem:nth-child(1) {
   -webkit-transition-delay: 250ms, 250ms;
   transition-delay: 250ms, 250ms;

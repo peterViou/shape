@@ -12,14 +12,24 @@
       </div>
     </div>
     <ul class="menu" [class.menuChecked]="isHotdogOpened">
-      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/latest" routerLinkActive="active">Latest</a></li>
-      <!--<li class="menuItem" [class.menu-item-checked]="isHotdogOpened">//</li>-->
-      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/services" routerLinkActive="active">Services</a></li>
-      <!--<li class="menuItem" [class.menu-item-checked]="isHotdogOpened">//</li>-->
-      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/clients" routerLinkActive="active">Clients</a></li>
-      <!--<li class="menuItem" [class.menu-item-checked]="isHotdogOpened">//</li>-->
-      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" routerLink="/contact" routerLinkActive="active">Contact</a></li>
-      <li class="menuItem insta" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink" >Follow us on Instagram</a></li>
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink"
+                                                                         routerLink="/latest" routerLinkActive="active">Latest</a>
+      </li>
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink"
+                                                                         routerLink="/services"
+                                                                         routerLinkActive="active">Services</a></li>
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink"
+                                                                         routerLink="/clients"
+                                                                         routerLinkActive="active">Clients</a></li>
+      <li class="menuItem" [class.menu-item-checked]="isHotdogOpened"><a (click)="toggleHotdog()" class="menuItemLink"
+                                                                         routerLink="/contact"
+                                                                         routerLinkActive="active">Contact</a></li>
+      <li class="menuItem insta" [class.menu-item-checked]="isHotdogOpened">
+        <a (click)="toggleHotdog()" class="menuItemLink">
+          <img class="instaLogo" src="/assets/Instagram_2016.svg">
+          <div class="follow">Follow us !</div>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
