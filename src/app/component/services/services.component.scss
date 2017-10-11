@@ -1,6 +1,12 @@
+.container {
+  max-width: 980px;
+  margin: 60px auto;
+}
 .content {
-  margin: 60px;
+  margin: 0 1.2em;
+
   columns: 300px;
+
 }
 p {
   color: #999;
