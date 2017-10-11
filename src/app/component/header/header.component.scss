@@ -221,7 +221,7 @@ $lg: 1200px;
   display: inline-block;
   //text-transform: uppercase;
   font-size: 15px;
-    position: relative;
+  position: relative;
   height: 44px;
   z-index: 1;
   vertical-align: top;
@@ -253,6 +253,13 @@ $lg: 1200px;
   transform: none;
 }
 
+.insta {
+  display: inline-block;
+  @media screen and (min-width: $sm) {
+    display: none;
+  }
+}
+
 .menuItem:nth-child(1) {
   -webkit-transition-delay: 250ms, 250ms;
   transition-delay: 250ms, 250ms;
@@ -271,6 +278,11 @@ $lg: 1200px;
 .menuItem:nth-child(4) {
   -webkit-transition-delay: 400ms, 400ms;
   transition-delay: 400ms, 400ms;
+}
+
+.menuItem:nth-child(5) {
+  -webkit-transition-delay: 450ms, 450ms;
+  transition-delay: 450ms, 450ms;
 }
 
 .menuItemLink {
