@@ -18,6 +18,7 @@ import {ClientsComponent} from './component/clients/clients.component';
 import {SimpleDataService} from "app/services/datas/simple-data.service";
 import { AppRoutingModule } from './app-routing.module';
 import { SerieInfoComponent } from './component/serie/serie-info/serie-info.component';
+import { PhotographersComponent } from './component/photographers/photographers.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SerieInfoComponent } from './component/serie/serie-info/serie-info.comp
     ServicesComponent,
     ContactComponent,
     ClientsComponent,
-    SerieInfoComponent
+    SerieInfoComponent,
+    PhotographersComponent
   ],
   imports: [
     BrowserModule,

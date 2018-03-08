@@ -1,13 +1,26 @@
 .container {
   max-width: 980px;
   margin: 60px auto;
+  font-family: "Helvetica Neue";
+
 }
 .content {
   margin: 0 1.2em;
 
+}
+
+.shapeServices{
+  column-fill: auto;
   columns: 300px;
+  color: #999;
+  height: 600px;
+  margin: 0;
+  padding: 0;
 
 }
-p {
-  color: #999;
+
+
+.strong{
+  color: black;
+  font-family: 'Bebas Neue', 'Helvetica Neue', Helvetica, 'Arial', sans-serif;
 }

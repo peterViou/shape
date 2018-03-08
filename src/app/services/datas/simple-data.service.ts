@@ -6,11 +6,18 @@ import {ISerie} from "./iserie";
 import 'rxjs/Rx';
 import {IAlbum} from "./ialbum";
 import {MasonryOptions} from "angular2-masonry";
+import {IClient} from "./iclient";
+import {IPhotographer} from "./iphotographer";
 
 @Injectable()
 export class SimpleDataService {
 
   private _latest: Observable<ISerie[]> = null;
+
+  private _clients: Observable<IClient[]> = null;
+  private _magazines: Observable<IClient[]> = null;
+  private _photographers: Observable<IPhotographer[]> = null;
+
   public currentSerie: ISerie;
   public masonryOptions: MasonryOptions = {
     transitionDuration: '0s',
@@ -47,6 +54,39 @@ export class SimpleDataService {
         .refCount();
     }
     return this._latest;
+  }
+
+  public getClients(): Observable<IClient[]> {
+    if (!this._clients) {
+      this._clients = this._http.get("./assets/clients.json")
+        .map((res: Response) => res.json())
+        // .do(latest => SimpleDataService.formatData(latest))
+        .publishReplay(1)
+        .refCount();
+    }
+    return this._clients;
+  }
+
+  public getMagazines(): Observable<IClient[]> {
+    if (!this._magazines) {
+      this._magazines = this._http.get("./assets/magazines.json")
+        .map((res: Response) => res.json())
+        // .do(latest => SimpleDataService.formatData(latest))
+        .publishReplay(1)
+        .refCount();
+    }
+    return this._magazines;
+  }
+
+  public getPhotographers(): Observable<IPhotographer[]> {
+    if (!this._photographers) {
+      this._photographers = this._http.get("./assets/photographers.json")
+        .map((res: Response) => res.json())
+        // .do(latest => SimpleDataService.formatData(latest))
+        .publishReplay(1)
+        .refCount();
+    }
+    return this._photographers;
   }
 
   public getSerieByID(monID: number): Observable<ISerie> {
