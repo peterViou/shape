@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import Player from "@vimeo/player";
-// import {Component, ViewChild} from '@angular/core';
-// import {NavController} from "ionic-angular/index";
-
+import {Lightbox} from 'angular2-lightbox';
+import {ISerie} from "../../services/datas/iserie";
+import {SimpleDataService} from "../../services/datas/simple-data.service";
+import {IAlbum} from "../../services/datas/ialbum";
 
 @Component({
   selector: 'app-contact',
@@ -11,21 +11,29 @@ import Player from "@vimeo/player";
 })
 export class ContactComponent implements OnInit {
 
-  @ViewChild('player_container') playerContainer;
-  private player: Player;
+  public LBOptions: Object = {};
+  public currentSerie: ISerie;
 
-  constructor() {
+  @ViewChild('player_container') playerContainer;
+
+  constructor(private _simpleData: SimpleDataService,
+              private _lightbox: Lightbox) {
   }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-    this.player = new Player(this.playerContainer.nativeElement, {
-      id: 19231868,
-      autoplay:true,
-      byline:false
-    });
+  }
+
+  public onAssetClick(assetID: number): void {
+    console.log("clicocococo");
+    let test:IAlbum;
+    test.caption = 'href="https://vimeo.com/83897470';
+    let testArray:IAlbum[];
+    testArray.push(test);
+    // this._lightbox.open(this._simpleData.getLightBoxAlbumFromSerie(this.currentSerie), assetID, this.LBOptions);
+    this._lightbox.open(testArray, assetID, this.LBOptions);
   }
 
 }

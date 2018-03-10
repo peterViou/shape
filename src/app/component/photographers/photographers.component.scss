@@ -7,28 +7,17 @@
   margin: 0 1.2em;
 }
 
-.justify {
-  //display: flex;
-  justify-content: space-between;
-  text-align: justify;
-}
-
-
 ul {
   margin: 0;
   padding: 0;
-  //display:flex;
-  //flex-direction:column;
-  //flex-wrap:wrap;
-  //justify-content: flex-start;
   columns: 300px;
   column-fill: auto;
+  column-gap: 20px;
+  text-align: justify;
 
-  //justify-content: space-between;
 }
 
 li {
-  //min-width: 300px;
   color: #999;
   display: inline;
   line-height: 1.7;
@@ -38,9 +27,8 @@ li {
 
 li:before {
   content: " // ";
-  //font-size: 20px;
-  margin-left:4px;
-  margin-right:4px;
+  margin-left: 4px;
+  margin-right: 4px;
   color: black;
 }
 

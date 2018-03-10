@@ -1,5 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {SimpleDataService} from "./services/datas/simple-data.service";
+import * as jQuery from "jquery";
+declare var jQuery: any
 
 @Component({
   selector: 'app-root',

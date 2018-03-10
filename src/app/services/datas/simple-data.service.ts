@@ -47,7 +47,7 @@ export class SimpleDataService {
 
   public getSeries(): Observable<ISerie[]> {
     if (!this._latest) {
-      this._latest = this._http.get("./assets/dataShape.json")
+      this._latest = this._http.get("./assets/datas/dataShape.json")
         .map((res: Response) => res.json())
         .do(latest => SimpleDataService.formatData(latest))
         .publishReplay(1)
@@ -58,7 +58,7 @@ export class SimpleDataService {
 
   public getClients(): Observable<IClient[]> {
     if (!this._clients) {
-      this._clients = this._http.get("./assets/clients.json")
+      this._clients = this._http.get("./assets/datas/clients.json")
         .map((res: Response) => res.json())
         // .do(latest => SimpleDataService.formatData(latest))
         .publishReplay(1)
@@ -69,7 +69,7 @@ export class SimpleDataService {
 
   public getMagazines(): Observable<IClient[]> {
     if (!this._magazines) {
-      this._magazines = this._http.get("./assets/magazines.json")
+      this._magazines = this._http.get("./assets/datas/magazines.json")
         .map((res: Response) => res.json())
         // .do(latest => SimpleDataService.formatData(latest))
         .publishReplay(1)
@@ -80,7 +80,7 @@ export class SimpleDataService {
 
   public getPhotographers(): Observable<IPhotographer[]> {
     if (!this._photographers) {
-      this._photographers = this._http.get("./assets/photographers.json")
+      this._photographers = this._http.get("./assets/datas/photographers.json")
         .map((res: Response) => res.json())
         // .do(latest => SimpleDataService.formatData(latest))
         .publishReplay(1)
