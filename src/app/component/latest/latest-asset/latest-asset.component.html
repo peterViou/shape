@@ -1,13 +1,13 @@
 <a
   class="serie"
-  [class.loaded]="_isLoaded"
+  [class.loaded]="isLoaded"
 >
   <img class="image"
        src={{firstItem.thumbnail}}
        (load)="checkLoaded()"
-       [class.loaded]="_isLoaded"
+       [class.loaded]="isLoaded"
   >
-  <div *ngIf="serie.title != ''" class="title">{{serie.title}}</div>
-  <div *ngIf="serie.artist != ''" class="artist">by {{serie.artist}}</div>
+  <div *ngIf="currentSerie.title != ''" class="title">{{currentSerie.title}}</div>
+  <div *ngIf="currentSerie.artist != ''" class="artist">by {{currentSerie.artist}}</div>
 </a>
 
