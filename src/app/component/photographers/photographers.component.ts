@@ -25,7 +25,7 @@ export class PhotographersComponent implements OnInit {
     this._simpleData.getPhotographers().subscribe(
       (data) => {
         this.photographers = data; // WORKS AND ALWAYS UP TO DATE
-        console.log("photographers : ", data); // ONLY WORKS ONCE
+        // console.log("photographers : ", data); // ONLY WORKS ONCE
       }
     );
   }

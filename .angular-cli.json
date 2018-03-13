@@ -10,6 +10,10 @@
       "assets": [
         "assets",
         "favicon.ico",
+        "favicon.png",
+        "apple-touch-icon.png",
+        "favicon-32x32.png",
+        "favicon-16x16.png",
         "/assets/shape-production_logo.png"
       ],
       "index": "index.html",

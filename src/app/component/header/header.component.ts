@@ -17,6 +17,6 @@ isHotdogOpened:boolean = false;
 
   toggleHotdog() {
     this.isHotdogOpened = !this.isHotdogOpened;
-    console.log("changement d'état du hotdog !",this.isHotdogOpened)
+    // console.log("changement d'état du hotdog !",this.isHotdogOpened);
   }
 }

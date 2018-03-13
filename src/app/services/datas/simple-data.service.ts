@@ -58,6 +58,8 @@ export class SimpleDataService {
 
   public getClients(): Observable<IClient[]> {
     if (!this._clients) {
+      console.log("chargement de ./assets/datas/clients.json")
+
       this._clients = this._http.get("./assets/datas/clients.json")
         .map((res: Response) => res.json())
         // .do(latest => SimpleDataService.formatData(latest))
@@ -69,6 +71,8 @@ export class SimpleDataService {
 
   public getMagazines(): Observable<IClient[]> {
     if (!this._magazines) {
+      console.log("chargement de ./assets/datas/magazines.json")
+
       this._magazines = this._http.get("./assets/datas/magazines.json")
         .map((res: Response) => res.json())
         // .do(latest => SimpleDataService.formatData(latest))
@@ -80,6 +84,7 @@ export class SimpleDataService {
 
   public getPhotographers(): Observable<IPhotographer[]> {
     if (!this._photographers) {
+      console.log("chargement de ./assets/datas/photographers.json")
       this._photographers = this._http.get("./assets/datas/photographers.json")
         .map((res: Response) => res.json())
         // .do(latest => SimpleDataService.formatData(latest))

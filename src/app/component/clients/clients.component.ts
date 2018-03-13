@@ -24,14 +24,14 @@ export class ClientsComponent implements OnInit {
     this._simpleData.getClients().subscribe(
       (data) => {
         this.clients = data; // WORKS AND ALWAYS UP TO DATE
-        console.log("clients : ", data); // ONLY WORKS ONCE
+        // console.log("clients : ", data); // ONLY WORKS ONCE
       }
     );
 
     this._simpleData.getMagazines().subscribe(
       (data) => {
         this.magazines = data; // WORKS AND ALWAYS UP TO DATE
-        console.log("magazines : ",data); // ONLY WORKS ONCE
+        // console.log("magazines : ",data); // ONLY WORKS ONCE
       }
     )
 

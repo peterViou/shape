@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   {path: 'clients', component: ClientsComponent},
   {path: 'photographers', component: PhotographersComponent},
   {path: 'contact', component: ContactComponent},
-  // {path: 'series', redirectTo: '/latest', pathMatch: 'prefix'}, // TODO : hack tout pourri pur contourner le fait qu'on peut pas refresh une serie sans avoir une methode dédie a fetch d'une serie et d'un gestion plus puissante de l'analyse de l'url
+  // {path: 'series', redirectTo: '/latest', pathMatch: 'prefix'}, // TODO : hack tout pourri pour contourner le fait qu'on peut pas refresh une serie sans avoir une methode dédie a fetch d'une serie et d'un gestion plus puissante de l'analyse de l'url
   {path: '', redirectTo: '/latest', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -24,7 +24,11 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: false} // <-- debugging purposes only
+      // {enableTracing: false},
+      {
+        useHash: true,
+        enableTracing: false
+      }
     )
   ],
   exports: [
