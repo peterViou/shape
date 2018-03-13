@@ -18,7 +18,9 @@ export class SimpleDataService {
   private _magazines: Observable<IClient[]> = null;
   private _photographers: Observable<IPhotographer[]> = null;
 
-  public currentSerie: ISerie;
+  public  currentSerie: ISerie;//todo Passer de préférence en private
+
+
   public masonryOptions: MasonryOptions = {
     transitionDuration: '0s',
     resize: true,
@@ -54,6 +56,12 @@ export class SimpleDataService {
         .refCount();
     }
     return this._latest;
+  }
+
+  public getSerieIDbymasonryID(masonryID: number): Observable<number> {
+    // let serieID: number;
+    return this._latest.map(data => data[masonryID].id)
+    ;
   }
 
   public getClients(): Observable<IClient[]> {
@@ -95,7 +103,8 @@ export class SimpleDataService {
   }
 
   public getSerieByID(monID: number): Observable<ISerie> {
-    console.log("getSerieByID : ", monID);
+    // console.log("getSerieByID : ", monID);
+    let maSerie: Observable<ISerie>;
     return this.getSeries()
       .map(series => series.find(serie => serie.id === monID))
   }

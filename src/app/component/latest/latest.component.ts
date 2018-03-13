@@ -4,7 +4,6 @@ import {ISerie} from "../../services/datas/iserie";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SimpleDataService} from "../../services/datas/simple-data.service";
 import {Lightbox} from 'angular2-lightbox';
-import {IAlbum} from "../../services/datas/ialbum";
 
 
 @Component({
@@ -15,12 +14,13 @@ import {IAlbum} from "../../services/datas/ialbum";
 export class LatestComponent implements OnInit {
 
   public displayedSeries: ISerie[];
-  public displayedAlbum: IAlbum[];
 
-  public myOptions: MasonryOptions ;
+  public myOptions: MasonryOptions;
 
-  latest: ISerie[];
+  latest: ISerie[] = null;
   subscription;
+
+  numberOfSeries: number;
 
   // private _fetchedSeries: ISerie[] = null;
   // private _hasBeenFormated: boolean;
@@ -37,11 +37,16 @@ export class LatestComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.latest == null) {
+      this._simpleData.getSeries().subscribe(res => {
+        this.latest = res;
+      });
+    }
     this.myOptions = this._simpleData.masonryOptions;
-    this.subscription = this._simpleData
-      .getSeries()
-      .subscribe(res => this.latest = res,
-        error => console.log(error));
+    // this.subscription = this._simpleData
+    //   .getSeries()
+    //   .subscribe(res => this.latest = res,
+    //     error => console.log(error));
 
     // this.displayedSeries = this._dataService.fetchedDatas.slice(0, this._cacheInitLength);
     // console.log("displayedSeries : ",this._dataService.displayedDatas);
@@ -68,10 +73,10 @@ export class LatestComponent implements OnInit {
     // }
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-    console.log('Destroyed');
-  }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  //   console.log('Destroyed');
+  // }
 
   public onScroll(): void {
     //TODO : refaire le buffer de display et activer à nouveau l'infinite Scroll
@@ -80,11 +85,40 @@ export class LatestComponent implements OnInit {
     // this._numberOfItemsInCache += this._cacheMoreLength;
   }
 
-  public onSerieClick(serieID: number): void {
-    console.log("serieID cliqué: ", serieID);
-    this._simpleData.currentSerie = this.latest[serieID];
+  public onSerieClick(masonryID: number): void {
+    // console.log("masonryID : ", masonryID);
+
+    // let serieID: number;
+    // this._simpleData.getSeries()
+    //   .subscribe(res => {
+    //     serieID = res[masonryID].id;
+    //     console.log('serieID', serieID);
+    //   });
+    //
+    //
+    // let serieID2: number;
+    // this._simpleData.getSerieIDbymasonryID(masonryID)
+    //   .subscribe(res => {
+    //     serieID2 = res;
+    //     console.log("serieID2 : ", serieID2);
+    //   });
+
+
+    // let serieID3: number;
+    // serieID3 = this.latest[masonryID].id;
+    this._router.navigate(['/series/' + this.latest[masonryID].id]);
+
+    // console.log("serieID : ", serieID);
+
+    // let maSerie: ISerie;
+    // this._simpleData.getSerieByID(serieID)
+    //   .subscribe(data => {
+    //     maSerie = data;
+    //     console.log('maSerie', maSerie);
+    //   });
+
+    // this._simpleData.currentSerie = this.latest[serieID];
     // console.log("this.latest[serieID].title: ", this.latest[serieID].id)
-      this._router.navigate(['/series/' + this.latest[serieID].id]);
 
 
     // if (this.latest[serieID].assets.length > 1) {
@@ -100,21 +134,12 @@ export class LatestComponent implements OnInit {
     //   });
 
 
-      // console.log("Il n'y a qu'un asset")
-      // this._lightbox.open(this.displayedAlbum, 0);
-      //todo : débuguer removechild de masonry ???
-
-    // this.displayedAlbum = this.latest[serieID].assets.map(serie => {
-    //   return {
-    //     src: serie.big,
-    //     caption: "",
-    //     thumb: serie.thumbnail
-    //   }
-    // });
     // console.log("Il n'y a qu'un asset")
     // this._lightbox.open(this.displayedAlbum, 0);
+    //todo : débuguer removechild de masonry ???
 
-    }
+
+  }
 
   /**
    * Force the redraw of Masonry

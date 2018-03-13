@@ -12,13 +12,14 @@
     [options]="myOptions"
     (layoutComplete)="masonryRedraw()"
   >
-        <app-latest-asset
-          masonry-brick
-          class="serie"
-          *ngFor="let serie of latest ; let i = index"
-          (click)="onSerieClick(i)"
-          [serie]="serie"
-        >
-        </app-latest-asset>
+    <app-latest-asset
+      masonry-brick
+      class="serie"
+      *ngFor="let serie of latest
+      let masonryID = index"
+      (click)="onSerieClick(masonryID)"
+      [serieID]="masonryID"
+    >
+    </app-latest-asset>
   </masonry>
 </div>

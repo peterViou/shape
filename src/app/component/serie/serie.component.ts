@@ -54,7 +54,6 @@ export class SerieComponent implements OnInit {
   }
 
   public onAssetClick(assetID: number): void {
-
     this._lightbox.open(this._simpleData.getLightBoxAlbumFromSerie(this.currentSerie), assetID, this.LBOptions);
   }
 
