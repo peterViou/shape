@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SimpleDataService} from "../../services/datas/simple-data.service";
 
 @Component({
   selector: 'app-services',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(              private _simpleData: SimpleDataService,
+  ) { }
 
   ngOnInit() {
+    console.log("services latest : ", this._simpleData.toutesmesseries)
+  }
+
+  ngOnDestroy() {
+    console.log('Services Destroyed');
   }
 
 }

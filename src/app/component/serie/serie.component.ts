@@ -51,6 +51,7 @@ export class SerieComponent implements OnInit {
   private handleInitComplete(s: ISerie): void {
     this.currentSerie = s;
     this.displayedAssets = s.assets;
+    // this.masonryRedraw();
   }
 
   public onAssetClick(assetID: number): void {

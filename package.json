@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "deploy Peter": "ng build -prod --base-href ./",
+    "deploy Peter 2": "ng build --env=prod --output-hashing --base-href ./",
     "start dist localy": "http-server /dist -o"
   },
   "private": true,
@@ -31,7 +32,7 @@
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
-    "@angular/cli": "1.1.1",
+    "@angular/cli": "^1.7.3",
     "@angular/compiler-cli": "^4.4.1",
     "@angular/language-service": "^4.4.1",
     "@types/jasmine": "2.5.45",

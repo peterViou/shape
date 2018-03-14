@@ -4,11 +4,19 @@
   transform: translate(0em, 3.8em);
   transition: all 0.4s;
   @media screen and (max-width: 768px) {
-    transform: translate(0em,4.2em);
+    transform: translate(0em, 4.2em);
   }
 }
 
-.centered {
+.square {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+
+.masonryCentered {
   margin: 0 auto;
 }
 

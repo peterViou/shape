@@ -16,9 +16,17 @@ import {ServicesComponent} from './component/services/services.component';
 import {ContactComponent} from './component/contact/contact.component';
 import {ClientsComponent} from './component/clients/clients.component';
 import {SimpleDataService} from "app/services/datas/simple-data.service";
-import { AppRoutingModule } from './app-routing.module';
-import { SerieInfoComponent } from './component/serie/serie-info/serie-info.component';
-import { PhotographersComponent } from './component/photographers/photographers.component';
+import {AppRoutingModule} from './app-routing.module';
+import {SerieInfoComponent} from './component/serie/serie-info/serie-info.component';
+import {PhotographersComponent} from './component/photographers/photographers.component';
+// import { NgModule } from '@angular/core';
+// import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
+
+// import { AppComponent } from './app.component';
+// import { Page1Component } from './page1.component';
+// import { Page2Component } from './page2.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +51,11 @@ import { PhotographersComponent } from './component/photographers/photographers.
     HttpModule,
     AppRoutingModule,
     JsonpModule,
-    LightboxModule
+    LightboxModule,
+
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     SimpleDataService

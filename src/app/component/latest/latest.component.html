@@ -5,9 +5,11 @@
   [infiniteScrollThrottle]="300"
   (scrolled)="onScroll()"
 >
+
   <!--<button (click)="loadData()">Reload</button>-->
   <masonry
-    class="centered"
+    class="masonryCentered"
+    [useImagesLoaded]="true"
     #myMasonry
     [options]="myOptions"
     (layoutComplete)="masonryRedraw()"
@@ -23,3 +25,4 @@
     </app-latest-asset>
   </masonry>
 </div>
+

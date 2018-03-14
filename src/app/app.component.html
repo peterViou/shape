@@ -3,6 +3,14 @@
   <app-instagram></app-instagram>
   <!--<button class="refreshBtn" (click)="refreshed()">Retrace</button>-->
   <!--<button class="loadMore" (click)="loadMore()">loadMore</button>-->
-  <router-outlet></router-outlet>
+  <!--<router-outlet></router-outlet>-->
+
+  <!--<main [@routerTransition]="page.activatedRouteData.state">-->
+    <!--<router-outlet #page="outlet"></router-outlet>-->
+  <!--</main>-->
+
+  <div class="page" [@routerAnimations]="prepareRouteTransition(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
 
 </div>

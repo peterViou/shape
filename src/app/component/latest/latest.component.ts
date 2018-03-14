@@ -17,7 +17,7 @@ export class LatestComponent implements OnInit {
 
   public myOptions: MasonryOptions;
 
-  latest: ISerie[] = null;
+  latest: ISerie[];
   subscription;
 
   numberOfSeries: number;
@@ -28,6 +28,7 @@ export class LatestComponent implements OnInit {
   // private _cacheMoreLength: number = 4; // should depend of the window widths
   // private _numberOfItemsInCache = this._dataService.displayedLengthInit;
   // _masonryInstance : Variable linked to masonry's component instantiated in the template
+
   @ViewChild('myMasonry') private _masonryInstance;
 
   constructor(private _route: ActivatedRoute,
@@ -37,10 +38,21 @@ export class LatestComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.latest == null) {
+
+    this._simpleData.stoderedMasonry = this._masonryInstance;
+
+    console.log("init le latatest");
+    // this._masonryInstance.
+    if (this._simpleData.toutesmesseries == null) {
+      console.log("chargement des datas");
       this._simpleData.getSeries().subscribe(res => {
         this.latest = res;
+        this._simpleData.toutesmesseries = this.latest;
       });
+    }
+    else {
+      console.log("reccuperations des datas");
+      this.latest = this._simpleData.toutesmesseries;
     }
     this.myOptions = this._simpleData.masonryOptions;
     // this.subscription = this._simpleData
@@ -73,10 +85,9 @@ export class LatestComponent implements OnInit {
     // }
   }
 
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  //   console.log('Destroyed');
-  // }
+  ngOnDestroy() {
+    console.log('Latest Destroyed');
+  }
 
   public onScroll(): void {
     //TODO : refaire le buffer de display et activer à nouveau l'infinite Scroll
@@ -145,7 +156,7 @@ export class LatestComponent implements OnInit {
    * Force the redraw of Masonry
    */
   public masonryRedraw() {
-    // console.log('complete series = ' + this._completeSeries);
+    // console.log('complete series = ' );
     this._masonryInstance.layout();
   }
 
