@@ -1,3 +1,19 @@
+$colors: red, orange, yellow, lime , blue, purple;
+$colors2: #111, #222, #333, #444, #555, #666;
+$repeat: 120; // How often you want the pattern to repeat.
+// Warning: a higher number outputs more CSS.
+
+@for $i from 1 through $repeat {
+  li:nth-child(#{length($colors2)}n+#{$i}) {
+    color: lighten(nth($colors2, random(length($colors2))), 20%);
+  }
+}
+
+li {
+  list-style: none;
+  padding: 1em;
+}
+
 .container {
   max-width: 980px;
   margin: 60px auto;
@@ -17,23 +33,26 @@ ul {
 }
 
 li {
-  color: #999;
+  //color: #999;
+  color: getRandomColor(hex);
   display: inline;
   line-height: 1.7;
   font-family: "Helvetica Neue";
   cursor: default;
+  padding: 0;
 }
 
 li:before {
   content: " // ";
-  margin-left:4px;
-  margin-right:4px;
+  margin-left: 4px;
+  margin-right: 4px;
   color: black;
 }
 
 li:first-child:before {
   content: "";
   padding-right: 0px;
+  //padding-left: 0px;
 }
 
 li:hover {

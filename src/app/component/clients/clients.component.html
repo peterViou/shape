@@ -1,8 +1,11 @@
 <div class="container">
   <div class="content">
     <h1>Clients</h1>
+
+
     <ul>
-      <li *ngFor="let client of clients">
+      <li *ngFor="let client of clients ">
+        <!--<li *ngFor="let client of clients | sort:'name' ">-->
         {{ client.name }}
       </li>
     </ul>
@@ -10,11 +13,11 @@
 
     <h1>Magazines</h1>
     <ul>
-      <li *ngFor="let magazine of magazines">
+      <li *ngFor="let magazine of magazines ">
+        <!--<li *ngFor="let magazine of magazines | sort:'name'">-->
         {{ magazine.name }}
       </li>
     </ul>
-
 
 
   </div>
