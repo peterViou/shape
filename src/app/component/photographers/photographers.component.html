@@ -3,7 +3,8 @@
     <h1>Photographers</h1>
     <ul>
       <li *ngFor="let photographer of photographers | shape: 'lastname': 'asc' ">
-        {{ photographer.firstname }} {{ photographer.lastname }}
+      <!--<li *ngFor="let photographer of photographers | uppercase ">-->
+        {{ photographer.firstname }} {{ photographer.lastname}}
       </li>
     </ul>
   </div>
