@@ -99,7 +99,6 @@ export class SimpleDataService {
       console.log("chargement de ./assets/datas/photographers.json")
       this._photographers = this._http.get("./assets/datas/photographers.json")
         .map((res: Response) => res.json())
-        // .do(latest => SimpleDataService.formatData(latest))
         .publishReplay(1)
         .refCount();
     }

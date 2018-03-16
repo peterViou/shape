@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {SimpleDataService} from "./services/datas/simple-data.service";
 import {transition, trigger} from '@angular/animations';
 import {fadeOut, slideLeft, slideRight} from "./animation";
+import {IPhotographer} from "./services/datas/iphotographer";
 
 //latest services clients photographers contact
 @Component({
@@ -42,11 +43,17 @@ import {fadeOut, slideLeft, slideRight} from "./animation";
 // transition('contact => clients', slideLeft),
 
 export class AppComponent implements OnInit {
+  private photographers: IPhotographer[];
   constructor(private _simpleDataService: SimpleDataService) {
   }
 
 
   ngOnInit(): void {
+    this._simpleDataService.getPhotographers().subscribe();
+    this._simpleDataService.getSeries().subscribe();
+    this._simpleDataService.getClients().subscribe();
+    this._simpleDataService.getMagazines().subscribe();
+
   }
 
   prepareRouteTransition(outlet) {

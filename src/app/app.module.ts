@@ -24,6 +24,7 @@ import {PhotographersComponent} from './component/photographers/photographers.co
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {ArraySortPipe} from './shape-pipes.pipe';
+import { ShapePipe } from './shape.pipe';
 
 // import { AppComponent } from './app.component';
 // import { Page1Component } from './page1.component';
@@ -44,7 +45,8 @@ import {ArraySortPipe} from './shape-pipes.pipe';
     ClientsComponent,
     SerieInfoComponent,
     PhotographersComponent,
-    ArraySortPipe
+    ArraySortPipe,
+    ShapePipe
   ],
   imports: [
     BrowserModule,

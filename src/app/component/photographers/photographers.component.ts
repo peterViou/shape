@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SimpleDataService} from "../../services/datas/simple-data.service";
-import {IClient} from "../../services/datas/iclient";
 import {IPhotographer} from "../../services/datas/iphotographer";
 
 @Component({
@@ -24,8 +23,8 @@ export class PhotographersComponent implements OnInit {
 
     this._simpleData.getPhotographers().subscribe(
       (data) => {
-        this.photographers = data; // WORKS AND ALWAYS UP TO DATE
-        // console.log("photographers : ", data); // ONLY WORKS ONCE
+        this.photographers = data;
+        // this.photographers.filter(photographers => photographers.lastname )
       }
     );
   }
