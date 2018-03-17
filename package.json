@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
+    "start 2": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "deploy Peter": "ng build -prod --base-href ./",
     "deploy Peter 2": "ng build --env=prod --output-hashing --base-href ./",

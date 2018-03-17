@@ -25,11 +25,13 @@ ul {
   column-fill: auto;
   column-gap: 20px;
   text-align: justify;
-
+  -webkit-padding-start: 0px !important;
 }
 
 li {
+  //float: left;
   display: inline;
+  //display: inline-block;
   line-height: 1.7;
   font-family: "Helvetica Neue";
   cursor: default;
@@ -44,7 +46,10 @@ li:before {
 
 li:first-child:before {
   content: "";
+  padding-left: 0px;
   padding-right: 0px;
+  margin-left: -6px; // Hack for extra space in iOS
+  margin-right: -8px; // Hack for extra space in iOS
 }
 
 li:hover {
