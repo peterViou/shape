@@ -46,10 +46,7 @@ li:before {
 
 li:first-child:before {
   content: "";
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: -6px; // Hack for extra space in iOS
-  margin-right: -8px; // Hack for extra space in iOS
+  margin-right: -18px; // Hack for extra space in iOS
 }
 
 li:hover {
