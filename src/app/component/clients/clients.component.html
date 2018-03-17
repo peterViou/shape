@@ -4,7 +4,7 @@
 
 
     <ul>
-      <li *ngFor="let client of clients| shape: 'lastname': 'desc'">
+      <li *ngFor="let client of clients| shape: 'name': 'asc'">
         {{ client.name }}
       </li>
     </ul>
@@ -12,7 +12,7 @@
 
     <h1>Magazines</h1>
     <ul>
-      <li *ngFor="let magazine of magazines| shape: 'lastname': 'desc' ">
+      <li *ngFor="let magazine of magazines| shape: 'name': 'asc' ">
         {{ magazine.name }}
       </li>
     </ul>

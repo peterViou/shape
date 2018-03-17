@@ -14,17 +14,10 @@ export class PhotographersComponent implements OnInit {
   constructor(private _simpleData: SimpleDataService) { }
 
   ngOnInit() {
-    console.log("Enter Photographer");
-    // this.subscription = this._simpleData
-    //   .getClients()
-    //   .subscribe(res => this.clients = res,
-    //     error => console.log(error));
-    // console.log("clients : ",this.clients);
 
     this._simpleData.getPhotographers().subscribe(
       (data) => {
         this.photographers = data;
-        // this.photographers.filter(photographers => photographers.lastname )
       }
     );
   }
